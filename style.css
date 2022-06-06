@@ -3,14 +3,15 @@
 
 body{
     background-image: url(./img/background-app.png);
-    min-height: 2000px;
+    min-height: 1500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-header{
+header,
+footer{
     max-height: 400px;
     background-color: rgb(355, 355, 355, .5);
 }
@@ -37,10 +38,16 @@ nav a{
     color:white;
 }
 
+.entry{
+    border: none;
+    border-radius: 10px;
+}
+
 .featured-box{
     width: 150px;
     height: 150px;
     background-color: rgb(355, 355, 355, .5);
+    border-radius: 10px;
 }
 
 .featured-title{
