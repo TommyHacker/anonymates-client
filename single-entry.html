@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-        <header class="p-5 text-center ">
+        <header class="p-5 mb-5 text-center ">
             <img src="./img/logo.png" alt="logo">
             <input type="text" name="search-bar" class="form-control-sm" id="search-bar" placeholder="Search an entry">
             <nav class="d-inline-block">
@@ -21,17 +21,24 @@
                 </div>
             </nav>
         </header>
-        <section class="container">
-            <form class="text-lg-center" id="article-buttons" action="">
-                <textarea name="single-entry" class="form-control-md border-0"  cols="60" rows="20" maxlength="1000" placeholder="Start typing here..."></textarea>
+
+        <section class="mt-5">
+            <form class="text-lg-center align-middle " id="single-entry" >
+                <textarea name="main-entry" class="form-control-md" id="" cols="60" rows="2" maxlength="1000" placeholder="   Title..."></textarea><br>
+                <textarea class=""name="single-entry" class="form-control-md border-10"  cols="60" rows="20" maxlength="1000" placeholder="   Start typing here..."></textarea>
                 <div class="border-0">
-                    <button type="button" value="GIF" name="GIF-btn" >GIF</button>
-                    <button type="button" value="" name="submit-btn">Post here!</button>
+                    <button class="buttons" type="button" value="GIF" name="GIF-btn" >GIF</button>
+                    <button class="buttons" type="button" value="" name="submit-btn">Post here!</button><span> &#x1F44D;</span><span>&#x1F49B;</span> <span> &#x1F44E;</span>
+                    <div class="align-content: inline">
+                    
+                    </div>
                 </div>
             </form>
         </section>
 
     </main>
-    
+    <footer class="footer">
+
+    </footer>
 </body>
 </html>

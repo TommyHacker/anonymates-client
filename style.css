@@ -19,7 +19,7 @@ header{
 nav a{
     font-family: Outfit, sans-serif;
     font-size: 1rem;
-    color: black;
+    color: white;
 }
 
 #search-bar{
@@ -32,7 +32,27 @@ nav a{
 #search-bar:active{
     border: rgb(0, 0, 0, .8) solid 1px;
 }
-#articleButtons {
+.single-entry{
+
+    display: flex;
+    text-align: center;
+    margin-top:10%;
+   
+}
+textarea {
     border: none;
+    border-radius: 10px;
+    margin-top:10%;
+}
+
+.buttons{
     border-radius: 30px;
+    background-color: black;
+    color: white;
+    padding: 8px 25px;
+    margin-left: 30px;
+ }
+ .footer{
+    max-height: 400px;
+    background-color: rgb(355, 355, 355, .5);
 }
