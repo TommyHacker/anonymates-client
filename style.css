@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Outfit:wght@300;400;700;900&display=swap');
+
+
 body{
-    background-image: url(./background-app.png);
+    background-image: url(./img/background-app.png);
     min-height: 2000px;
     background-attachment: fixed;
     background-position: center;
@@ -7,3 +10,25 @@ body{
     background-size: cover;
 }
 
+header{
+    max-height: 400px;
+    background-color: rgb(355, 355, 355, .5);
+}
+
+
+nav a{
+    font-family: Outfit, sans-serif;
+    font-size: 1rem;
+    color: black;
+}
+
+#search-bar{
+    border-radius: 30px;
+    border: none;
+    width: 500px;
+    padding: 15px;
+}
+
+#search-bar:active{
+    border: rgb(0, 0, 0, .8) solid 1px;
+}
