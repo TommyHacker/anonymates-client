@@ -20,6 +20,40 @@ nav a{
     font-family: Outfit, sans-serif;
     font-size: 1rem;
     color: black;
+    text-decoration: none;
+    margin-left: 80px;
+}
+
+.buttons{
+   border-radius: 30px;
+   background-color: black;
+   color: white;
+   padding: 8px 25px;
+   margin-left: 30px;
+}
+
+.buttons:hover{
+    background-color: rgb(0, 0, 0, .7);
+    color:white;
+}
+
+.featured-box{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(355, 355, 355, .5);
+}
+
+.featured-title{
+    color: black;
+    text-decoration: none;
+}
+
+.featured-title:hover{
+    color: rgb(0, 0, 0, .7);
+}
+
+#logo{
+    margin: 0px 80px;
 }
 
 #search-bar{
@@ -29,6 +63,6 @@ nav a{
     padding: 15px;
 }
 
-#search-bar:active{
-    border: rgb(0, 0, 0, .8) solid 1px;
+#search-bar:focus{
+    border: none;
 }
