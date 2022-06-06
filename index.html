@@ -10,12 +10,14 @@
 </head>
 <body>
     <main>
-        <header class="container">
-            <img src="" alt="logo">
-            <input type="text" name="search-bar" placeholder="Search an entry">
-            <nav>
+        <header class="p-5 text-center">
+            <img src="./img/logo.png" alt="logo">
+            <input type="text" name="search-bar" class="form-control-sm" id="search-bar" placeholder="Search an entry">
+            <nav class="d-inline-block">
                 <a href="about-page.html">About</a>
-                <a href="all-entries.html">See all entries</a>
+                <div class="buttons d-inline-block">
+                    <a href="all-entries.html" >See all entries</a>
+                </div>
             </nav>
         </header>
         <section>
@@ -32,7 +34,7 @@
         </section>
         <section>
             <form action="">
-                <textarea name="main-entry" id="" cols="30" rows="10" maxlength="1000" placeholder="Start typing here..."></textarea>
+                <textarea name="main-entry" class="form-control-md" id="" cols="30" rows="10" maxlength="1000" placeholder="Start typing here..."></textarea>
                 <div>
                     <button type="button" value="GIF" name="GIF-btn">GIF</button>
                     <button type="button" value="" name="submit-btn">Post here!</button>
