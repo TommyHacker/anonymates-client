@@ -1,5 +1,3 @@
-
-
 const form = document.querySelector('form');
 // const url = 'https://anonymates.herokuapp.com/article';
 
@@ -33,7 +31,6 @@ form.addEventListener('submit', async (e) => {
         .then((res) => {window.location.replace(`./single-entry.html?id=${res.data.id}`)})
         // catch any errors
         .catch((err) => console.log(err));
-  
 });
 
 // this gets an Array of all articles!
