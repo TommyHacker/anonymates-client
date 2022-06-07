@@ -10,56 +10,66 @@
 </head>
 <body>
     <main>
-        <header class="p-5 text-center">
-            <img src="./img/logo.png" alt="logo">
+        <header class="pt-5 pb-5 text-center">
+            <img src="./img/logo.png" alt="logo" id="logo">
             <input type="text" name="search-bar" class="form-control-sm" id="search-bar" placeholder="Search an entry">
             <nav class="d-inline-block">
                 <a href="about-page.html">About</a>
-                <div class="buttons d-inline-block">
-                    <a href="all-entries.html" >See all entries</a>
+                <div class="d-inline-block">
+                    <a href="all-entries.html" class="buttons">See all entries</a>
                 </div>
             </nav>
         </header>
-        <section>
-            <h2>Read our latest posts</h2>
-            <div class="background">
-                <a href="#">Featured article</a>
-            </div>
-            <div class="background">
-                <a href="#">Featured article</a>
-            </div>
-            <div class="background">
-                <a href="#">Featured article</a>
-            </div>
+
+        <section class="p-5 text-center">
+            <h2 class="fs-1 p-5">Read our <span style="font-family:'Fugaz One';">latest posts</span></h2>
+            <div class="container"></div>
+                <div class="row align-items-start">
+                    <div class="col featured-box p-5 m-5">
+                        <a href="#" class="fs-3 featured-title">Featured article</a>
+                    </div>
+                    <div class="col featured-box p-5 m-5">
+                        <a href="#" class="fs-3 featured-title">Featured article</a>
+                    </div>
+                    <div class="col featured-box p-5 m-5">
+                        <a href="#" class="fs-3 featured-title">Featured article</a>
+                    </div>
+                </div>
         </section>
-        <section>
-            <form action="">
-                <textarea name="main-entry" class="form-control-md" id="" cols="30" rows="10" maxlength="1000" placeholder="Start typing here..."></textarea>
-                <div>
-                    <button type="button" value="GIF" name="GIF-btn">GIF</button>
-                    <button type="button" value="" name="submit-btn"><a href="single-entry.html">Post here! </a></button>
+        <section class="p-5 text-center">
+            <form class="container">
+                <div class="row col m-5">
+                    <input type="text" name="title" placeholder="Type your title" class="m-3 p-3 entry" required>
+                    <textarea name="body" class="form-control-lg m-3 entry" cols="30" rows="10" maxlength="1000" placeholder="Start typing here..." required></textarea>
+                </div>
+                <div class="d-flex justify-content-end mb-5">
+                    <button type="button" value="GIF" name="GIF-btn" class="buttons">GIF</button>
+                    <input type="submit" value="Post here!" name="submit-btn" class="buttons">
                 </div>
             </form>
         </section>
-        <section>
-            <h2>Meet the contributors</h2>
-                <div>
-                    <img src="#" alt="">
-                    <h3>Name</h3>
+        <footer class="text-center pt-5 pb-5">
+            <h2 class="fs-1 p-5">Meet the <span style="font-family:'Fugaz One';">contributors</span></h2>
+                <div class="d-flex justify-content-evenly">
+                    <div>
+                        <img src="#" alt="">
+                        <h3>Name</h3>
+                    </div>
+                    <div>
+                        <img src="#" alt="">
+                        <h3>Name</h3>
+                    </div>
+                    <div>
+                        <img src="#" alt="">
+                        <h3>Name</h3>
+                    </div>
+                    <div>
+                        <img src="#" alt="">
+                        <h3>Name</h3>
+                    </div>
                 </div>
-                <div>
-                    <img src="#" alt="">
-                    <h3>Name</h3>
-                </div>
-                <div>
-                    <img src="#" alt="">
-                    <h3>Name</h3>
-                </div>
-                <div>
-                    <img src="#" alt="">
-                    <h3>Name</h3>
-                </div>
-        </section>
-    </main>   
+        </footer>
+    </main>  
+    <script src="./script.js"></script> 
 </body>
 </html>
