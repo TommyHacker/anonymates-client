@@ -1,3 +1,4 @@
+
 const form = document.querySelector('form');
 // const url = 'https://anonymates.herokuapp.com/article';
 
@@ -40,10 +41,37 @@ const articlesFetch = async () => {
         // parse to javascript
         .then((res) => res.json())
         // do something with the data
-        .then((data) => console.log(data))
+        .then(data => data.forEach(el => {
+            // attempting to display all articles 
+            // console.log(data);
+            const div = document.createElement('div')
+            const h1 = document.createElement('h1')
+            const p1 = document.createElement('p')
+            const button = document.createElement('button')
+
+            // textA.classList = 'form-control-lg m-3'
+            const divy = document.querySelector('#divy')
+            button.textContent = 'read more'
+            button.classList = ' w-25 btn btn-primary mx-auto'
+            divy.classList = 'd-flex flex-column-reverse align-items-center' 
+            div.classList = ' w-75 card mt-4 p-3'
+            p1.classList= 'card-text form-control'
+            h1.classList= 'card-title text-center'
+            
+            h1.textContent = el.title
+            p1.textContent = el.body
+            
+            div.appendChild(h1)
+            div.appendChild(p1)
+            div.appendChild(button)
+            divy.appendChild(div)
+
+            console.log(el.comments[el.comments.length -1]);
+
+        }))
         // catch any error
         .catch((err) => console.log(err));
-};
+}; 
 
 // get all articles on page load
 articlesFetch();
