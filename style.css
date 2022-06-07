@@ -90,3 +90,12 @@ textarea {
     max-height: 400px;
     background-color: rgb(355, 355, 355, .5);
 }
+
+/* .articles-div{
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+.article-card{
+margin: 0;
+} */
