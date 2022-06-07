@@ -1,102 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Outfit:wght@300;400;700;900&display=swap');
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-body{
-    background-image: url(./img/background-app.png);
-    min-height: 1500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+	background-image: url(./img/background-app.png);
+	min-height: 1500px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 header,
-footer{
-    max-height: 400px;
-    background-color: rgb(355, 355, 355, .5);
+footer {
+	max-height: 400px;
+	background-color: rgb(355, 355, 355, 0.5);
 }
 
-
-nav a{
-    font-family: Outfit, sans-serif;
-    font-size: 1rem;
-    color: black;
-    text-decoration: none;
-    margin-left: 80px;
+nav a {
+	font-family: Outfit, sans-serif;
+	font-size: 1rem;
+	color: black;
+	text-decoration: none;
+	margin-left: 80px;
 }
 
-.buttons{
-   border-radius: 30px;
-   background-color: black;
-   color: white;
-   padding: 8px 25px;
-   margin-left: 30px;
+.buttons {
+	border-radius: 30px;
+	background-color: black;
+	color: white;
+	padding: 8px 25px;
+	margin-left: 30px;
 }
 
-.buttons:hover{
-    background-color: rgb(0, 0, 0, .7);
-    color:white;
+.buttons:hover {
+	background-color: rgb(0, 0, 0, 0.7);
+	color: white;
 }
 
-.entry{
-    border: none;
-    border-radius: 10px;
+.entry {
+	border: none;
+	border-radius: 10px;
 }
 
-.featured-box{
-    width: 150px;
-    height: 150px;
-    background-color: rgb(355, 355, 355, .5);
-    border-radius: 10px;
+.featured-box {
+	width: 150px;
+	height: 150px;
+	background-color: rgb(355, 355, 355, 0.5);
+	border-radius: 10px;
 }
 
-.featured-title{
-    color: black;
-    text-decoration: none;
+.featured-title {
+	color: black;
+	text-decoration: none;
 }
 
-.featured-title:hover{
-    color: rgb(0, 0, 0, .7);
+.featured-title:hover {
+	color: rgb(0, 0, 0, 0.7);
 }
 
-#logo{
-    margin: 0px 80px;
+#logo {
+	margin: 0px 80px;
 }
 
-#search-bar{
-    border-radius: 30px;
-    border: none;
-    width: 500px;
-    padding: 15px;
+#search-bar {
+	border-radius: 30px;
+	border: none;
+	width: 500px;
+	padding: 15px;
 }
 
-#search-bar:focus{
-    border: none;
+#search-bar:focus {
+	border: none;
 }
-.single-entry{
-    display: flex;
-    text-align: center;
-    margin-top:10%;
-   
+.single-entry {
+	display: flex;
+	text-align: center;
+	margin-top: 10%;
 }
 textarea {
-    border: none;
-    border-radius: 10px;
-    margin-top:10%;
+	border: none;
+	border-radius: 10px;
+	margin-top: 10%;
 }
 
- .footer{
-    max-height: 400px;
-    width: 100%;
-    background-color: rgb(355, 355, 355, .5);
+.footer {
+	max-height: 400px;
+	width: 100%;
+	background-color: rgb(355, 355, 355, 0.5);
 }
 
 .article-container {
-    text-align: center;
-    width: 95%;
-    height: 700px;
-    background-color: rgb(355, 355, 355, .5);
-    border-radius: 10px;
-    
+	text-align: center;
+	width: 95%;
+	height: 700px;
+	background-color: rgb(355, 355, 355, 0.5);
+	border-radius: 10px;
 }
-
+#divy > div {
+	cursor: pointer;
+}

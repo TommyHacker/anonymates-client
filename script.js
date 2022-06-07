@@ -78,3 +78,5 @@ const articlesFetch = async () => {
 
 // get all articles on page load
 articlesFetch();
+
+window.addEventListener('click', (e) => {});
