@@ -85,14 +85,9 @@ textarea {
     margin-top:10%;
 }
 
- .footer{
-    max-height: 400px;
-    width: 100%;
-    background-color: rgb(355, 355, 355, .5);
-}
 
 .article-container {
-    text-align: center;
+   
     width: 95%;
     height: 700px;
     background-color: rgb(355, 355, 355, .5);
