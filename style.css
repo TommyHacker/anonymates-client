@@ -73,3 +73,20 @@ nav a{
 #search-bar:focus{
     border: none;
 }
+.single-entry{
+
+    display: flex;
+    text-align: center;
+    margin-top:10%;
+   
+}
+textarea {
+    border: none;
+    border-radius: 10px;
+    margin-top:10%;
+}
+
+ .footer{
+    max-height: 400px;
+    background-color: rgb(355, 355, 355, .5);
+}
