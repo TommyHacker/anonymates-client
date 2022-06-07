@@ -23,7 +23,7 @@ form.addEventListener('submit', async (e) => {
         // destructure data into string
         body: JSON.stringify({ data }),
         // ignore cors policy
-        cors: 'no-cors',
+        cors: 'no-cors', 
     })
         // parse response
         .then((res) => res.json())
