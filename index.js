@@ -53,7 +53,7 @@ const get_Gif = async (e)=>{
     
     //GIPHY api url with our access key added ,
     // whatever there user types in the search bar will ge inserted to ${expQ}
-    const api_url = `http://api.giphy.com/v1/gifs/search?q=${expQ}&api_key=${api_key}&limit=5`
+    const api_url = `http://api.giphy.com/v1/gifs/search?q=${expQ}&api_key=${api_key}&limit=4`
     
     //fetching response from GIPHY api using api_url + ExQ + api_key
     const resp = await fetch(api_url)
