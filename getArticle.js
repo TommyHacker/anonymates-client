@@ -1,6 +1,6 @@
 let result;
-const id = window.location.search.split('=')[1];
-const getSingleArticle = async () => {	
+const getSingleArticle = async () => {
+	const id = window.location.search.split('=')[1];
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
 		.then(async (data) => {
@@ -24,43 +24,13 @@ const getSingleArticle = async () => {
 				comment.textContent = result.comments[i].text;
 				document.body.append(comment);
 			}
-
-			//Likes
-			const countLike = document.querySelector('.count-like');
-			countLike.textContent = result.likes;
-		
 		})
 		.catch((err) => console.log(err));
-		console.log(result.title);
+	console.log(result.title);
 };
 
 getSingleArticle();
 
-
-//Like Button
-const likeBtn = document.querySelector('.likebtn');
-
-const increaseLike = () => {
-	const data = {likes: 1}
-	fetch(`https://anonymates.herokuapp.com/articles/${id}/like`, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		mode: 'cors',
-		body: JSON.stringify({data})
-	})
-	.then(res => res.text())
-	.then(res => console.log(res))
-	.catch(error => console.log(error))
-
-}
-
-const clickLikeBtn = () => {
-	increaseLike()
-}
-
-likeBtn.addEventListener('click', clickLikeBtn)
 
 const form = document.getElementById('single-entry')
 form.addEventListener('submit', async (e) => {
@@ -87,7 +57,3 @@ form.addEventListener('submit', async (e) => {
 		.catch((err) => console.log(err));
 });
 
-
-//LEAVE A COMMENT
-
-const commentBtn = document.querySelector
