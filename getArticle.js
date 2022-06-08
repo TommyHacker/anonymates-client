@@ -31,7 +31,7 @@ const getSingleArticle = async () => {
 		
 		})
 		.catch((err) => console.log(err));
-		console.log(result.title);
+		//console.log(result.title);
 };
 
 getSingleArticle();
@@ -62,32 +62,56 @@ const clickLikeBtn = () => {
 
 likeBtn.addEventListener('click', clickLikeBtn)
 
-const form = document.getElementById('single-entry')
-form.addEventListener('submit', async (e) => {
+//const form = document.getElementById('single-entry')
+// form.addEventListener('submit', async (e) => {
 	// dont refresh the page when form submitted.
-	e.preventDefault();
+	// e.preventDefault();
 	
-	const result = fetch('https://anonymates.herokuapp.com/articles', {
+	// const result = fetch('https://anonymates.herokuapp.com/articles', {
+	// 	method: 'POST',
+	// 	headers: {
+	// 		'Content-Type': 'application/json',
+	// 	},
+		// destructure data into string
+		// body: JSON.stringify({ data }),
+		// ignore cors policy
+	// 	cors: 'no-cors',
+	// })
+		// parse response
+		// .then((res) => res.json())
+		// return data once parsed
+		// .then((res) => {
+		// 	window.location.replace(`./single-entry.html?id=${res.data.id}`);
+		// })
+		// catch any errors
+// 		.catch((err) => console.log(err));
+// });
+
+
+//LEAVE A COMMENT BUTTON
+
+const commentForm = document.querySelector('#comment-form');
+const textA = document.querySelector('#textA');
+
+commentForm.addEventListener('submit', async (e) => {
+	e.preventDefault();
+	const text = textA.textContent;
+
+	await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`,{
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
+			mode: 'no-cors'
 		},
-		// destructure data into string
-		body: JSON.stringify({ data }),
-		// ignore cors policy
-		cors: 'no-cors',
+		body: JSON.stringify({ data: { text, giphyUrl } }),
 	})
-		// parse response
-		.then((res) => res.json())
-		// return data once parsed
-		.then((res) => {
-			window.location.replace(`./single-entry.html?id=${res.data.id}`);
-		})
-		// catch any errors
-		.catch((err) => console.log(err));
+	.then(res => (res.json()))
+	.then(res => console.log(res))
+	// .then(async (data) => {
+	// 	const comment = data;
+
+	// })
+	.catch(error => console.log(error))
 });
 
 
-//LEAVE A COMMENT
-
-const commentBtn = document.querySelector
