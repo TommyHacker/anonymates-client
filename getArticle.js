@@ -20,9 +20,11 @@ const getSingleArticle = async () => {
 
 			// render comments
 			for (i = 0; i < result.comments.length; i++) {
-				const comment = document.createElement('p');
+				const comment = document.createElement('p')
+				const comment_Div = document.getElementById('comment-append')
+				comment.classList = " m-3 "
 				comment.textContent = result.comments[i].text;
-				document.body.append(comment);
+				comment_Div.append(comment)
 			}
 		})
 		.catch((err) => console.log(err));
