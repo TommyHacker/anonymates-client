@@ -76,5 +76,10 @@ const articlesFetch = async () => {
 		.catch((err) => console.log(err));
 };
 
+function validateField() {
+    var docs = document.getElementById("img");
+    docs.setAttribute("src", "images/action/animation/UploadStatus.gif" );
+}
+
 // get all articles on page load
 articlesFetch();
