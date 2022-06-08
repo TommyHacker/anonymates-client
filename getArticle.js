@@ -1,5 +1,21 @@
 let result;
 const id = window.location.search.split('=')[1];
+let commentAmount = 0;
+//let newCommentAmount = 0;
+
+const renderComments = () => {
+	if( result.comments.length > commentAmount ){
+		for (i = commentAmount; i < result.comments.length; i++) {
+			const comment = document.createElement('p');
+			comment.textContent = result.comments[i].text;
+			document.body.append(comment);
+			console.log(i)
+		}
+		commentAmount = result.comments.length;
+
+	}
+	
+}
 const getSingleArticle = async () => {
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
@@ -18,12 +34,13 @@ const getSingleArticle = async () => {
 			const message = document.querySelector('#article-content');
 			message.textContent = await result.body;
 
+			renderComments()
 			// render comments
-			for (i = 0; i < result.comments.length; i++) {
-				const comment = document.createElement('p');
-				comment.textContent = result.comments[i].text;
-				document.body.append(comment);
-			}
+			// for (i = 0; i < result.comments.length; i++) {
+			// 	const comment = document.createElement('p');
+			// 	comment.textContent = result.comments[i].text;
+			// 	document.body.append(comment);
+			// }
 		})
 		.catch((err) => console.log(err));
 	console.log(result.title);
@@ -63,7 +80,7 @@ const commentImage = document.querySelector('#comment-image');
 
 commentForm.addEventListener('submit', async (e) => {
 	e.preventDefault();
-	const text = textA.value;
+	let text = textA.value;
 	console.log('text = ', text);
 	const giphyUrl = commentImage.src;
 	console.log('giphyUrl = ', giphyUrl);
@@ -76,10 +93,12 @@ commentForm.addEventListener('submit', async (e) => {
 		body: JSON.stringify({ text, giphyUrl }),
 	})
 		.then((res) => res.json())
-		.then((data) => console.log(data))
-		// .then(async (data) => {
-		// 	const comment = data;
-
-		// })
+		.then((data) => { 
+			result.comments = data.data;
+			//console.log(data);
+			renderComments() 
+		})
 		.catch((error) => console.log(error));
+		textA.value = '';
+		commentImage.src = '';
 });
