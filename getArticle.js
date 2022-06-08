@@ -26,65 +26,60 @@ const getSingleArticle = async () => {
 			}
 		})
 		.catch((err) => console.log(err));
-	  console.log(result.title);
-
+	console.log(result.title);
 };
 
 getSingleArticle();
-
 
 //Like Button
 const likeBtn = document.querySelector('.likebtn');
 
 const increaseLike = () => {
-	const data = {likes: 1}
+	const data = { likes: 1 };
 	fetch(`https://anonymates.herokuapp.com/articles/${id}/like`, {
 		method: 'POST',
 		headers: {
-			'Content-Type': 'application/json'
+			'Content-Type': 'application/json',
 		},
 		mode: 'cors',
-		body: JSON.stringify({data})
+		body: JSON.stringify({ data }),
 	})
-	.then(res => res.text())
-	.then(res => console.log(res))
-	.catch(error => console.log(error))
-
-}
+		.then((res) => res.text())
+		.then((res) => console.log(res))
+		.catch((error) => console.log(error));
+};
 
 const clickLikeBtn = () => {
-	increaseLike()
-}
+	increaseLike();
+};
 
-likeBtn.addEventListener('click', clickLikeBtn)
-
+likeBtn.addEventListener('click', clickLikeBtn);
 
 //LEAVE A COMMENT BUTTON
 
 const commentForm = document.querySelector('#comment-form');
 const textA = document.querySelector('#textA');
-const commentImage = document.querySelector('#comment-image')
+const commentImage = document.querySelector('#comment-image');
 
 commentForm.addEventListener('submit', async (e) => {
 	e.preventDefault();
-	const text = textA.textContent;
+	const text = textA.value;
+	console.log('text = ', text);
 	const giphyUrl = commentImage.src;
-	console.log(giphyUrl)
-	await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`,{
+	console.log('giphyUrl = ', giphyUrl);
+	await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			mode: 'no-cors'
+			mode: 'no-cors',
 		},
-		body: JSON.stringify({ data: { text, giphyUrl } }),
+		body: JSON.stringify({ text, giphyUrl }),
 	})
-	.then(res => (res.json()))
-	.then(res => console.log(res))
-	// .then(async (data) => {
-	// 	const comment = data;
+		.then((res) => res.json())
+		.then((data) => console.log(data))
+		// .then(async (data) => {
+		// 	const comment = data;
 
-	// })
-	.catch(error => console.log(error))
+		// })
+		.catch((error) => console.log(error));
 });
-
-
