@@ -27,35 +27,23 @@
             <nav class="d-inline-block">
                 <a href="about-page.html">About</a>
                 <div class="buttons d-inline-block">
-                    <a href="index.html">See all entries</a>
+                    <a href="index.html" >See all entries</a>
                 </div>
             </nav>
         </header>
 
-        <section class="article-section">
-            <div class="article-container text-center p-1 mt-5">
-                <h1 class="p-4 mt-2" id="title"></h1>
-                <p  class="p-4 mt-4" id="article-content"></p> 
-            </div>    
-            <div class="mt-4 d-flex justify-content-end">
-                <button class="likebtn btn-like">
-                    <span class="heart btn--icon-default">
-                        <span class="heart">&#9829</span>
-                    </span>
-                    <span class="count-like">0</span>
-                    <span class="btn-content btn-content--default">
-                        Likes
-                    </span>
-                </button>
-            </div>   
-        </section>   
+        <section class=" container-lg article-container p-2 mt-2">
+            <h1 class="p-4 mt-2 " id="title"></h1>
+            <p  class=" p-4 mt-4" id="article-content"></p>
+        </section>
 
         <section class="mt-5">
             <form class="text-lg-center align-middle" id="single-entry" >
                 <!-- text area and gif image container -->
               <div class="d-flex flex-row justify-content-center">
 
-                <textarea name="single-entry" id="textA" class="form-control-md border-10"  cols="100" rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
+                <textarea class=""name="single-entry" id="textA" class="form-control-md border-10"  cols="100" rows="8" maxlength="1000" placeholder="Leave your comment here...">
+                </textarea>
                     
                 <div id="comment-image-container">
                     <img src="" alt="" id="comment-image">
@@ -64,7 +52,7 @@
 
                 <div class="border-0">
                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
-                    <button class="buttons" id="comment-btn" type="submit" name="submit-btn"> Leave a comment!</button>
+                    <button class="buttons" type="submit"  name="submit-btn"> Leave a comment! </a></button>
                    <div class="d-inline-block mx-3 mt-2">
                        <span id="emoji1" class="mx-2 fs-2">🔥</span>
                        <span id="emoji2" class="mx-2 fs-3">☀</span>

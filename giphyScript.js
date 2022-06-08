@@ -88,4 +88,3 @@ gif2.addEventListener('click', (e) => {
 gif3.addEventListener('click', (e) => {
 	saveChosenGif(e.target.src);
 });
-
