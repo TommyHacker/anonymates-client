@@ -84,7 +84,7 @@ const get_Gif = async (e) => {
 		//bootstrap class of width 50% i believe
 		imgz.classList = 'p-2';
 		// setting img tag to have a cursor pointer when hovered
-		imgz.style = 'cursor: pointer;height:170px;width:170px;';
+		imgz.style = 'cursor: pointer; height:170px; width:170px;';
 
 		console.log(exp007.childElementCount);
 		// exp007.childElementCount >= 8 ?  false : ''
