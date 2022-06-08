@@ -40,6 +40,7 @@ const getSingleArticle = async () => {
 getSingleArticle();
 
 
+
 //Like Button
 const likeBtn = document.querySelector('.likebtn');
 
@@ -64,5 +65,31 @@ const clickLikeBtn = () => {
 }
 
 likeBtn.addEventListener('click', clickLikeBtn)
+
+
+const form = document.getElementById('single-entry')
+form.addEventListener('submit', async (e) => {
+	// dont refresh the page when form submitted.
+	e.preventDefault();
+	
+	const result = fetch('https://anonymates.herokuapp.com/articles', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		// destructure data into string
+		body: JSON.stringify({ data }),
+		// ignore cors policy
+		cors: 'no-cors',
+	})
+		// parse response
+		.then((res) => res.json())
+		// return data once parsed
+		.then((res) => {
+			window.location.replace(`./single-entry.html?id=${res.data.id}`);
+		})
+		// catch any errors
+		.catch((err) => console.log(err));
+});
 
 
