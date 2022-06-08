@@ -77,8 +77,8 @@ const articlesFetch = async () => {
 };
 
 function validateField() {
-    var docs = document.getElementById("img");
-    docs.setAttribute("src", "images/action/animation/UploadStatus.gif" );
+	var docs = document.getElementById('img');
+	docs.setAttribute('src', 'images/action/animation/UploadStatus.gif');
 }
 
 // get all articles on page load

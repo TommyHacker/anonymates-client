@@ -3,24 +3,29 @@ const id = window.location.search.split('=')[1];
 let commentAmount = 0;
 //let newCommentAmount = 0;
 
+// this is to display the number of likes that the article has.
+const likesNum = document.querySelector('.count-like');
+
 const renderComments = () => {
-	if( result.comments.length > commentAmount ){
+	if (result.comments.length > commentAmount) {
 		for (i = commentAmount; i < result.comments.length; i++) {
 			const comment = document.createElement('p');
 			comment.textContent = result.comments[i].text;
 			document.body.append(comment);
-			console.log(i)
+			console.log(i);
 		}
 		commentAmount = result.comments.length;
-
 	}
-	
-}
+};
 const getSingleArticle = async () => {
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
 		.then(async (data) => {
 			result = data;
+			likesNum.textContent = data.likes;
+			emojiCount1.textContent = data.reactions[0].count;
+			emojiCount2.textContent = data.reactions[1].count;
+			emojiCount3.textContent = data.reactions[2].count;
 
 			// render the title
 
@@ -35,14 +40,13 @@ const getSingleArticle = async () => {
 			message.textContent = await result.body;
 
 			// render comments
-			renderComments()
+			renderComments();
 
-    // for (i = 0; i < result.comments.length; i++) {
+			// for (i = 0; i < result.comments.length; i++) {
 			// 	const comment = document.createElement('p');
 			// 	comment.textContent = result.comments[i].text;
 			// 	document.body.append(comment);
 			// }
-
 		})
 		.catch((err) => console.log(err));
 	console.log(result.title);
@@ -59,12 +63,16 @@ const increaseLike = () => {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
+			mode: 'no-cors',
 		},
 		mode: 'cors',
 		body: JSON.stringify({ data }),
 	})
-		.then((res) => res.text())
-		.then((res) => console.log(res))
+		.then((res) => res.json())
+		.then((data) => {
+			console.log(data);
+			likesNum.textContent = data.likes;
+		})
 		.catch((error) => console.log(error));
 };
 
@@ -95,12 +103,12 @@ commentForm.addEventListener('submit', async (e) => {
 		body: JSON.stringify({ text, giphyUrl }),
 	})
 		.then((res) => res.json())
-		.then((data) => { 
+		.then((data) => {
 			result.comments = data.data;
 			//console.log(data);
-			renderComments() 
+			renderComments();
 		})
 		.catch((error) => console.log(error));
-		textA.value = '';
-		commentImage.src = '';
+	textA.value = '';
+	commentImage.src = '';
 });
