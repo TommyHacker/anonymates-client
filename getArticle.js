@@ -1,6 +1,6 @@
 let result;
+const id = window.location.search.split('=')[1];
 const getSingleArticle = async () => {
-	const id = window.location.search.split('=')[1];
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
 		.then(async (data) => {
@@ -61,14 +61,15 @@ likeBtn.addEventListener('click', clickLikeBtn)
 
 //LEAVE A COMMENT BUTTON
 
-
 const commentForm = document.querySelector('#comment-form');
 const textA = document.querySelector('#textA');
+const commentImage = document.querySelector('#comment-image')
 
 commentForm.addEventListener('submit', async (e) => {
 	e.preventDefault();
 	const text = textA.textContent;
-
+	const giphyUrl = commentImage.src;
+	console.log(giphyUrl)
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`,{
 		method: 'POST',
 		headers: {
