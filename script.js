@@ -1,4 +1,4 @@
-const form = document.querySelector('form');
+const form = document.querySelector('#main-entry');
 // const url = 'https://anonymates.herokuapp.com/article';
 
 form.addEventListener('submit', async (e) => {
@@ -76,7 +76,10 @@ const articlesFetch = async () => {
 		.catch((err) => console.log(err));
 };
 
+function validateField() {
+    var docs = document.getElementById("img");
+    docs.setAttribute("src", "images/action/animation/UploadStatus.gif" );
+}
+
 // get all articles on page load
 articlesFetch();
-
-
