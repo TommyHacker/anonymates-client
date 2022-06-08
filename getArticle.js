@@ -34,13 +34,15 @@ const getSingleArticle = async () => {
 			const message = document.querySelector('#article-content');
 			message.textContent = await result.body;
 
-			renderComments()
 			// render comments
-			// for (i = 0; i < result.comments.length; i++) {
+			renderComments()
+
+    // for (i = 0; i < result.comments.length; i++) {
 			// 	const comment = document.createElement('p');
 			// 	comment.textContent = result.comments[i].text;
 			// 	document.body.append(comment);
 			// }
+
 		})
 		.catch((err) => console.log(err));
 	console.log(result.title);
