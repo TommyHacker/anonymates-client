@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single entry</title>
+    <link rel="icon" type="image/png" href="./img/logo.png"/>
+
+    <title>delete me</title>
     <link rel="stylesheet" href="style.css">
     <link rel="Home page" href="index.html">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script defer src="./getArticle.js"></script>
+    <!-- <script defer src="./getArticle.js"></script> -->
+    <script defer src="./index.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script defer src="./getArticle.js"></script>
+
 
 </head>
 <body>
@@ -49,17 +55,58 @@
         </section>
 
         <section class="mt-5">
-            <form class="text-lg-center align-middle " id="single-entry" >
-                <textarea class=""name="single-entry" class="form-control-md border-10"  cols="60" rows="4" maxlength="1000" placeholder="  Leave your comment here..."></textarea>
-                <div class="border-0">
-                    <button class="buttons" type="button" value="GIF" name="GIF-btn" >GIF</button>
-                    <button class="buttons" type="button" value="" name="submit-btn"> Leave a comment! </a></button>
-                    <div class="align-content: inline">
+            <form class="text-lg-center align-middle" id="single-entry" >
+                <!-- text area and gif image container -->
+              <div class="d-flex flex-row justify-content-center">
+
+                <textarea class=""name="single-entry" id="textA" class="form-control-md border-10"  cols="100" rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
                     
+                <div id="comment-image-container">
+                    <img src="" alt="" id="comment-image">
+                </div>
+              </div>
+
+                <div class="border-0">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
+                    <button class="buttons" type="submit"  name="submit-btn"> Leave a comment! </a></button>
+                   <div class="d-inline-block mx-3 mt-2">
+                       <span id="emoji1" class="mx-2 fs-2">🔥</span>
+                       <span id="emoji2" class="mx-2 fs-3">☀</span>
+                       <span id="emoji3" class="mx-2 fs-3">🤑</span>
                     </div>
+                    
                 </div>
             </form>
         </section>
+   
+
+
+<!-- exp modal-->
+        <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">experiment</h5>
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+                        <h4>How creative ar you 👀?</h4>
+                        <div id="exp007" class="d-flex flex-wrap p-3 mb-5 h-50">
+
+                        </div>
+                        
+                        <form class="form" id="formz">
+                            <!-- <label for="searchQ"  class="form-label mt-5">🔍GIF</label> -->
+                            <input type="search" required class="search-bar form-control mt-5 " name="searchQ" id="expQ" placeholder="type for GIFS">
+                            <input type="submit"  class="btn btn-success mt-2"  value="🔍GIF">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
     <footer class="footer">
