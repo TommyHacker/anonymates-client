@@ -1,4 +1,4 @@
-const form = document.querySelector('form');
+const form = document.querySelector('#main-entry');
 // const url = 'https://anonymates.herokuapp.com/article';
 
 form.addEventListener('submit', async (e) => {
