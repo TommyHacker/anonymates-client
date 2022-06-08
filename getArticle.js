@@ -8,18 +8,15 @@ const getSingleArticle = async () => {
 
 			// render the title
 
-			const title = document.querySelector('#title')
+			const title = document.querySelector('#title');
 			title.textContent = await result.title;
 			// append to a container that isnt the body
 			// e.g. const container = document.querySelector(".container")
 			// container.append(title)
 
-
 			// rended the article.body
-			const message = document.querySelector('#article-content')
+			const message = document.querySelector('#article-content');
 			message.textContent = await result.body;
-
-
 
 			// render comments
 			for (i = 0; i < result.comments.length; i++) {
