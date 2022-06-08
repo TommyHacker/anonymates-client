@@ -83,3 +83,5 @@ function validateField() {
 
 // get all articles on page load
 articlesFetch();
+
+
