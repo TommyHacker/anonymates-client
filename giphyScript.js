@@ -9,7 +9,7 @@ let gifModalState = false;
 
 gifBtn.addEventListener('click', (e) => {
 	e.preventDefault();
-	e.stopPropagation();
+	// e.stopPropagation();
 	gifModalState = !gifModalState;
 	switch (gifModalState) {
 		// if state is true, add reveal class and remove hide class from css
