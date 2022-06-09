@@ -155,3 +155,40 @@ textarea:focus {
 	height: 200px;
 	border: solid black 1px;
 }
+
+ */
+
+.reaction-container {
+	transition: 0.2s;
+	/* border-radius: 50%; */
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	opacity: 0.6;
+	margin: 0 20px 10px 0;
+	filter: grayscale(0.5);
+}
+.reaction-container:hover {
+	filter: grayscale(0);
+	opacity: 1;
+}
+.emoji-count1,
+.emoji-count2,
+.emoji-count3 {
+	border-radius: 50%;
+	box-shadow: 0px 0px 4px rgba(96, 200, 204, 0.521);
+	min-width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	left: 25px;
+	bottom: 20px;
+	font-weight: 900;
+	color: rgb(89, 198, 228);
+	font-size: 12pt;
+}
