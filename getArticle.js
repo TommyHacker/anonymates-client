@@ -4,8 +4,10 @@ const getSingleArticle = async () => {
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
 		.then(async (data) => {
-			result = data;
-
+			result = data
+			
+			console.log(data);
+			console.log(result.comments);
 			// render the title
 
 			const title = document.querySelector('#title');
@@ -19,13 +21,50 @@ const getSingleArticle = async () => {
 			message.textContent = await result.body;
 
 			// render comments
-			for (i = 0; i < result.comments.length; i++) {
-				const comment = document.createElement('p')
-				const comment_Div = document.getElementById('comment-append')
-				comment.classList = " m-3 "
-				comment.textContent = result.comments[i].text;
-				comment_Div.append(comment)
+			const article_comments = result.comments
+			console.log(result.comments);
+			article_comments.forEach(e=>{
+				console.log(e);
+				console.log(e.text.length);
+
+				if (e.text.length <= 0){
+					console.log('no comments');
+				} else{
+
+					const reply_card_div = document.createElement('div')
+					const reply_gif_img = document.createElement('img')
+					const reply_text_div = document.createElement('div')
+					const reply_Para = document.createElement('p')
+					const comment_Div = document.getElementById('comment-append')
+					
+					console.log(e.giphyUrl);
+					
+					reply_card_div.classList = "card p-3"
+					reply_card_div.style.width = '18rem'
+					
+					reply_gif_img.classList = "card-img-top "
+					reply_gif_img.src = "https://media3.giphy.com/media/67ThRZlYBvibtdF9JH/200.gif?cid=73c2368f4jg0n96nmaefg94gcmvtswx3oxzwriz0tl7g1e18&rid=200.gif&ct=g"
+					reply_text_div.classList = "card-body"
+					
+					reply_Para.classList = "card-body"
+					reply_Para.textContent = e.text
+					reply_text_div.append(reply_Para)
+				reply_card_div.append(reply_gif_img, reply_text_div)
+				
+				comment_Div.append(reply_card_div)
 			}
+				
+				
+				
+			})
+			// for (i = 0; i < result.comments.length; i++) {
+				// 	const comment = document.createElement('p')
+				// 	//not sure if keeping this 
+				// 	comment.classList = " m-3 "
+				// 	comment.textContent = result.comments[i].text;
+			// 	//add this
+			// 	comment_Div.append(comment)
+			// }
 		})
 		.catch((err) => console.log(err));
 	console.log(result.title);

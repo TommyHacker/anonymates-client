@@ -65,7 +65,7 @@ const articlesFetch = async () => {
 				div.appendChild(p1);
 				divy.appendChild(div);
 
-				console.log(el.comments[el.comments.length - 1]);
+				// console.log(el.comments[el.comments.length - 1]);
 
 				div.addEventListener('click', (e) => {
 					window.location.replace(`./single-entry.html?id=${el.id}`);
