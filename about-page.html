@@ -13,19 +13,21 @@
 	<script defer src="./getArticle.js"></script>
 </head>
 <body>
-    <header class="p-5 text-center ">
+    <header class="pt-5 pb-5 text-center">
         <a href="index.html">
-        <img src="./img/logo.png" alt="logo">
+
+        <img src="./img/logo.png" alt="logo" id="logo">
         </a>
 
         <!-- search bar  -->
         <input type="text" name="search-bar" class="form-control-sm mx-4 justify-content-center" id="search-bar" placeholder="Search an entry">
 
         <!-- nav bar -->
+
         <nav class="d-inline-block">
             <a href="about-page.html">About</a>
-            <div class="buttons d-inline-block">
-                <a href="all-entries.html" >See all entries</a>
+            <div class="d-inline-block">
+                <a href="index.html" class="buttons">See all entries</a>
             </div>
         </nav>
 
@@ -35,26 +37,34 @@
         </section>  
 
     </header>
+ 
     <main>
-        <h2 class="fs-1 p-5">Meet the <span style="font-family:'Fugaz One';">contributors</span></h2>
-                <div class="d-flex justify-content-evenly">
-                    <div>
-                        <img src="#" alt="">
-                        <h3>Name</h3>
+        <section class="p-5 text-center">
+            <h2 class="fs-1 p-5 text-center">Meet the <span class="fontFamily">contributors</span></h2>
+            <!-- <div class="p-3 d-flex flex-column"> -->
+                <div class="d-flex flex-row m-auto">
+                    <div class="p-5 d-flex flex-md-column m-auto">
+                        <img src="./img/Marie-Sophie.png" class="img-about" alt="">
+                        <h3 class="pt-4 fontFamily">Marie-Sophie</h3>
+                    </div>    
+                    <div class="m-5 p-5 d-flex flex-sm-column">
+                        <p class="text-start">Lemon drops muffin lemon drops bonbon cookie apple pie tiramisu tootsie roll. Toffee marshmallow halvah bear claw toffee dragée chocolate cake. Tiramisu soufflé croissant jelly-o cookie.</p>
                     </div>
-                    <div>
-                        <img src="#" alt="">
-                        <h3>Name</h3>
-                    </div>
-                    <div>
-                        <img src="#" alt="">
-                        <h3>Name</h3>
-                    </div>
-                    <div>
-                        <img src="#" alt="">
-                        <h3>Name</h3>
-                    </div>
+                <!-- </div> -->
+                <!-- <div>
+                    <img src="#" alt="">
+                    <h3>Name</h3>
                 </div>
+                <div>
+                    <img src="#" alt="">
+                    <h3>Name</h3>
+                </div>
+                <div>
+                    <img src="#" alt="">
+                    <h3>Name</h3>
+                </div>
+            </div> -->
+        </section>    
     </main>
     
 </body>
