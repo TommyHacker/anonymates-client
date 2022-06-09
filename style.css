@@ -117,11 +117,15 @@ textarea:focus {
 
 .article-container {
 	text-align: center;
+	height:max-content;
 	width: 68%;
 	overflow-y: scroll;
 	background-color: rgb(355, 355, 355, 0.5);
 	border-radius: 10px;
 	margin-left: 20px ;
+	resize: none;
+	overflow-y: scroll;
+	height:500px;
 }
 #divy > div {
 	cursor: pointer;
@@ -202,8 +206,9 @@ textarea:focus {
 
 .leave-comment {
 	text-align: left ;
-	width: 68%;
+	width: 67%;
 	margin: 20px;
+	resize: none;
 	
 }
 #comments-display {
