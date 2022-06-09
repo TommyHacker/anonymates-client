@@ -19,14 +19,16 @@ describe('index.html', () => {
 			let form;
 			let titleInput, textA, postBtn;
 			beforeEach(() => {
-				form = document.getElementById('#main-entry');
-				titleInput = document.getElementById('#article-title');
-				textA = document.querySelector('textarea');
-				postBtn = document.querySelector('[type="submit"]');
+				form = document.querySelector('#main-entry');
+				titleInput = form.querySelector('#article-title');
+				textA = form.querySelector('textarea');
+				postBtn = form.querySelector('[type="submit"]');
 			})
+
 			test('it exists', () => {
 				expect(form).toBeTruthy()
 			});
+
 		});
 		
 			describe('title input', () => {
@@ -39,5 +41,21 @@ describe('index.html', () => {
 				})
 			});
 
+			describe('textarea', () => {
+				test('it has a max number of words', () => {
+						expect(textA.getAttribute('maxlength')).toBe('1000')
+					})			
+				})
 
+
+			describe('post button', () => {
+				test('it says "Post here!"', () => {
+					expect(postBtn.value).toBe('Post here!')
+				})
+			})	
+			
+		test('it has a GIF form', () => {
+			expect(document.getElementById('#gif-formz')).toBeTruthy()
+		})	
+			
 	});
