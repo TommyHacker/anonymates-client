@@ -21,7 +21,7 @@ const renderComments = () => {
 			
 			console.log(e.giphyUrl);
 			
-			reply_card_div.classList = "card p-3"
+			reply_card_div.classList = "card p-3 mt-3"
 			reply_card_div.style.width = '18rem'
 			
 			reply_gif_img.classList = "card-img-top "
@@ -71,6 +71,7 @@ const getSingleArticle = async () => {
 			const imij = document.createElement('img');
 			imij.src = result.giphyUrl;
 			imij.id = 'article-gif';
+
 
 			articleContent.append(imij);
 
