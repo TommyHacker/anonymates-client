@@ -71,6 +71,7 @@ nav a {
 .img-about{
     border-radius: 50%;
     width: 150px;
+}
 
 .fontFamily {
 	font-family: 'Fugaz One';
@@ -84,6 +85,10 @@ nav a {
 
 #logo {
     margin: 0px 80px;
+}
+
+#logo-link{
+	text-decoration: none;
 }
 
 #search-bar {
