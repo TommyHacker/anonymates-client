@@ -21,7 +21,7 @@ const renderComments = () => {
 			
 			console.log(e.giphyUrl);
 			
-			reply_card_div.classList = "card p-3"
+			reply_card_div.classList = "card p-3 mt-3"
 			reply_card_div.style.width = '18rem'
 			
 			reply_gif_img.classList = "card-img-top "
@@ -64,9 +64,9 @@ const getSingleArticle = async () => {
 			const message = document.querySelector('#article-content');
 			message.textContent = await result.body;
 
+			
 			renderComments();
-		
-			})
+		})
 			// for (i = 0; i < result.comments.length; i++) {
 				// 	const comment = document.createElement('p')
 				// 	//not sure if keeping this 
