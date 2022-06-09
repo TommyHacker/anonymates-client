@@ -12,7 +12,6 @@ const emojiCount3 = document.querySelector('.emoji-count3');
 emoji1.addEventListener('click', (e) => {
 	e.stopPropagation();
 	const data = { reaction: 0 };
-	console.log(data);
 	// fetch(`https://anonymates.herokuapp.com/articles/${id}/reaction`, {
 	fetch(`https://anonymates.herokuapp.com/articles/${id}/reaction`, {
 		method: 'POST',
@@ -23,15 +22,17 @@ emoji1.addEventListener('click', (e) => {
 		body: JSON.stringify({ data }),
 	})
 		.then((res) => res.json())
-		.then((data) => (emojiCount1.textContent = data.reaction))
+		.then((response) => {
+			console.log(response);
+			emojiCount1.textContent = response.reaction;
+		})
 		.catch((err) => console.log(err));
 });
 
 emoji2.addEventListener('click', (e) => {
 	e.stopPropagation();
 	const data = { reaction: 1 };
-	console.log(data);
-	fetch(`http://localhost:3000/articles/${id}/reaction`, {
+	fetch(`https://anonymates.herokuapp.com/articles/${id}/reaction`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -40,15 +41,14 @@ emoji2.addEventListener('click', (e) => {
 		body: JSON.stringify({ data }),
 	})
 		.then((res) => res.json())
-		.then((data) => (emojiCount2.textContent = data.reaction))
+		.then((response) => (emojiCount2.textContent = response.reaction))
 		.catch((err) => console.log(err));
 });
 
 emoji3.addEventListener('click', (e) => {
 	e.stopPropagation();
 	const data = { reaction: 2 };
-	console.log(data);
-	fetch(`http://localhost:3000/articles/${id}/reaction`, {
+	fetch(`https://anonymates.herokuapp.com/articles/${id}/reaction`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
@@ -57,6 +57,6 @@ emoji3.addEventListener('click', (e) => {
 		body: JSON.stringify({ data }),
 	})
 		.then((res) => res.json())
-		.then((data) => (emojiCount3.textContent = data.reaction))
+		.then((response) => (emojiCount3.textContent = response.reaction))
 		.catch((err) => console.log(err));
 });
