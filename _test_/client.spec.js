@@ -5,14 +5,14 @@ const html = fs.readFileSync(path.resolve(__dirname, '../index.html'), 'utf8');
 describe('index.html', () => {
 	beforeEach(() => {
 		document.documentElement.innerHTML = html.toString();
-	});
+	})
 	describe('head', () => {
 		test('it has a title', () => {
-			let title = document.querySelector('title');
+			const title = document.querySelector('title');
 			expect(title).toBeTruthy();
-		});
-	});
-});
+		})
+	})
+
 
 	describe('body', () => {
 		describe('form', () => {
@@ -29,7 +29,7 @@ describe('index.html', () => {
 				expect(form).toBeTruthy()
 			});
 
-		});
+			
 		
 			describe('title input', () => {
 				test('it is a text input', () => {
@@ -53,9 +53,12 @@ describe('index.html', () => {
 					expect(postBtn.value).toBe('Post here!')
 				})
 			})	
-			
+		
+		});
+
 		test('it has a GIF form', () => {
-			expect(document.getElementById('#gif-formz')).toBeTruthy()
+			expect(document.querySelector('#gif-formz')).toBeTruthy()
 		})	
-			
-	});
+
+	})
+})

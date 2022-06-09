@@ -76,6 +76,10 @@ nav a {
 	margin: 0px 80px;
 }
 
+#logo-link{
+	text-decoration: none;
+}
+
 #search-bar {
 	border-radius: 30px;
 	border: none;
