@@ -1,13 +1,39 @@
 let result;
 const id = window.location.search.split('=')[1];
+let commentAmount = 0;
+//let newCommentAmount = 0;
+
+// this is to display the number of likes that the article has.
+const likesNum = document.querySelector('.count-like');
+
+const renderComments = () => {
+	if (result.comments.length > commentAmount) {
+		for (i = commentAmount; i < result.comments.length; i++) {
+			const comment = document.createElement('p');
+			comment.textContent = result.comments[i].text;
+			document.body.append(comment);
+			console.log(i);
+		}
+		commentAmount = result.comments.length;
+	}
+};
 const getSingleArticle = async () => {
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
 		.then(async (data) => {
+<<<<<<< HEAD
 			result = data
 			
 			console.log(data);
 			console.log(result.comments);
+=======
+			result = data;
+			likesNum.textContent = data.likes;
+			emojiCount1.textContent = data.reactions[0].count;
+			emojiCount2.textContent = data.reactions[1].count;
+			emojiCount3.textContent = data.reactions[2].count;
+
+>>>>>>> 754beb3e7b1a2b5b649e530cfc04ac6c26be2e92
 			// render the title
 
 			const title = document.querySelector('#title');
@@ -21,6 +47,7 @@ const getSingleArticle = async () => {
 			message.textContent = await result.body;
 
 			// render comments
+<<<<<<< HEAD
 			const article_comments = result.comments
 			console.log(result.comments);
 			article_comments.forEach(e=>{
@@ -64,6 +91,14 @@ const getSingleArticle = async () => {
 				// 	comment.textContent = result.comments[i].text;
 			// 	//add this
 			// 	comment_Div.append(comment)
+=======
+			renderComments();
+
+			// for (i = 0; i < result.comments.length; i++) {
+			// 	const comment = document.createElement('p');
+			// 	comment.textContent = result.comments[i].text;
+			// 	document.body.append(comment);
+>>>>>>> 754beb3e7b1a2b5b649e530cfc04ac6c26be2e92
 			// }
 		})
 		.catch((err) => console.log(err));
@@ -81,12 +116,16 @@ const increaseLike = () => {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
+			mode: 'no-cors',
 		},
 		mode: 'cors',
 		body: JSON.stringify({ data }),
 	})
-		.then((res) => res.text())
-		.then((res) => console.log(res))
+		.then((res) => res.json())
+		.then((data) => {
+			console.log(data);
+			likesNum.textContent = data.likes;
+		})
 		.catch((error) => console.log(error));
 };
 
@@ -104,7 +143,7 @@ const commentImage = document.querySelector('#comment-image');
 
 commentForm.addEventListener('submit', async (e) => {
 	e.preventDefault();
-	const text = textA.value;
+	let text = textA.value;
 	console.log('text = ', text);
 	const giphyUrl = commentImage.src;
 	console.log('giphyUrl = ', giphyUrl);
@@ -117,10 +156,12 @@ commentForm.addEventListener('submit', async (e) => {
 		body: JSON.stringify({ text, giphyUrl }),
 	})
 		.then((res) => res.json())
-		.then((data) => console.log(data))
-		// .then(async (data) => {
-		// 	const comment = data;
-
-		// })
+		.then((data) => {
+			result.comments = data.data;
+			//console.log(data);
+			renderComments();
+		})
 		.catch((error) => console.log(error));
+	textA.value = '';
+	commentImage.src = '';
 });
