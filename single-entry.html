@@ -35,6 +35,7 @@
                     <a href="index.html" class="buttons">See all entries</a>
                 </div>
             </nav>
+
         </header>
 
         <section class="article-section">
@@ -42,6 +43,36 @@
             <div id="" class="article-container col-xs-6 text-center p-1 mt-5 ">
                 <h1 class="p-4 mt-2" id="title"></h1>
                 <p class="p-4 mt-4" id="article-content"></p>
+
+
+            <!-- search results / append li > a tags-->
+            <section class="container">
+                <ul id="names" class="list-group w-auto"></ul>
+         </section>  
+        </header>
+
+      
+        
+        <section class="article-section ">
+            
+            <!-- START single article section -->
+            <div id="" class="article-container  text-center p-1 mx-auto mt-5">
+                
+                <h1 class="p-4 mt-2" id="title"></h1>
+
+                
+                
+                <div class="p-4 mt-4" id="article-content">
+                    <!--   entry GIF gets appened here       -->
+                      <p id="article-text">
+                     <!-- article body appended here -->
+                      </p>
+                  </div>
+               
+            </div>
+            <!-- END single article section -->
+            
+
                 <div class="d-flex flex-row justify-content-start mx-3 mt-2 ">
                     <div class="reaction-container">
                         <div class="emoji-count1"></div>
@@ -51,6 +82,7 @@
                     <div class="reaction-container">
                         <div class="emoji-count2"></div>
                         <span id="emoji2" class="mx-3 fs-3">☀</span>
+                        
                     </div>
 
                     <div class="reaction-container">
@@ -94,6 +126,7 @@
                     </div>
                 </div>
 
+
                 <div class="border-0">
                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal"  type="button"
                     name="GIF-btn">🔍 GIF</button>
@@ -112,6 +145,11 @@
 
             <!-- <div class="mt-4 d-flex justify-content-end">
                 <button class="likebtn btn-like ">
+
+            </div> 
+            <div class="mt-4 d-flex justify-content-start p-5">
+                <button class="likebtn btn btn-dark ">
+
                     <span class="heart btn--icon-default">
                         <span class="heart">&#9829</span>
                     </span>
@@ -120,11 +158,66 @@
                         Likes
                     </span>
                 </button>
+
             </div> -->
         </section>
 
         <section class="mt-5">
            
+            </div>
+          
+           <!-- append reply-comments if any available -->
+            <div id="comment-append" class="article-container  p-5 mt-5 mb-2 mx-auto">
+             <!-- REPLY COMMENTS APPENDED HERE -->
+          </div>
+             
+              
+                <!-- append comments if any available -->
+            </div>
+            <div id="comment-append"
+                class="article-container d-flex justify-content-center text-center p-1 mt-5 mb-2 mx-5"></div>
+
+            
+        </section>
+
+        <section class="mt-5">
+
+            <form class="text-lg-center align-middle" id="comment-form">
+
+                <!-- text area and gif image container -->
+                <div class="d-flex flex-column justify-content-center">
+
+                    <textarea class="" name="single-entry" id="textA" class="form-control-md border-10" cols="100"
+                        rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
+
+
+                    <!--  -->
+                <div id="comment-image-container">
+                    <img src="" alt="" id="comment-image">
+
+                </div>
+                <!-- container for <GIF> and <Leave a Comment!> button -->
+                <div class="d-flex align-items-center flex-row justify-content-between">
+
+
+                    <!-- 🔍gif button -->
+                    <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
+                   
+
+                    <input type="submit" class="buttons"  value="Leave a comment!">
+
+
+                    <div class="d-flex flex-row mx-3 mt-2">
+
+
+
+
+
+                    </div>
+
+                </div>
+            </form>
+
         </section>
 
         <!-- exp modal-->

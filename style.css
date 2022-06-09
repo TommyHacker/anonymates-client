@@ -63,6 +63,7 @@ nav a {
     color: rgb(0, 0, 0, 0.7);
 }
 
+
 .fontFamily{
     font-family: 'Fugaz One';
 }
@@ -70,6 +71,15 @@ nav a {
 .img-about{
     border-radius: 50%;
     width: 150px;
+
+.fontFamily {
+	font-family: 'Fugaz One';
+}
+
+.img-about {
+	border-radius: 50%;
+	width: 150px;
+
 }
 
 #logo {
@@ -140,8 +150,17 @@ textarea:focus {
     height: 12rem;
     justify-content: space-around;
 }
+::-webkit-scrollbar {
+	display: none;
+}
+
+#article-gif {
+	height: 70%;
+}
 
 /* 
+
+
 
 .article-container { 
     width: 95%;
