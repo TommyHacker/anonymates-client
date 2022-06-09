@@ -13,3 +13,49 @@ describe('index.html', () => {
 		});
 	});
 });
+
+	describe('body', () => {
+		describe('form', () => {
+			let form;
+			let titleInput, textA, postBtn;
+			beforeEach(() => {
+				form = document.querySelector('#main-entry');
+				titleInput = form.querySelector('#article-title');
+				textA = form.querySelector('textarea');
+				postBtn = form.querySelector('[type="submit"]');
+			})
+
+			test('it exists', () => {
+				expect(form).toBeTruthy()
+			});
+
+		});
+		
+			describe('title input', () => {
+				test('it is a text input', () => {
+					expect(titleInput.getAttribute('type')).toBe('text')
+				})
+
+				test('it has a placeholder', () => {
+					expect(document.querySelector('[placeholder="Type your title"]')).toBeTruthy();
+				})
+			});
+
+			describe('textarea', () => {
+				test('it has a max number of words', () => {
+						expect(textA.getAttribute('maxlength')).toBe('1000')
+					})			
+				})
+
+
+			describe('post button', () => {
+				test('it says "Post here!"', () => {
+					expect(postBtn.value).toBe('Post here!')
+				})
+			})	
+			
+		test('it has a GIF form', () => {
+			expect(document.getElementById('#gif-formz')).toBeTruthy()
+		})	
+			
+	});
