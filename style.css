@@ -17,7 +17,7 @@ body {
 
 header,
 footer {
-	max-height: 400px;
+	max-height: 600px;
 	background-color: rgb(355, 355, 355, 0.5);
 }
 
@@ -61,6 +61,15 @@ nav a {
 
 .featured-title:hover {
 	color: rgb(0, 0, 0, 0.7);
+}
+
+.fontFamily{
+	font-family: 'Fugaz One';
+}
+
+.img-about{
+	border-radius: 50%;
+	width: 150px;
 }
 
 #logo {
