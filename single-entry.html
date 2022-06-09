@@ -42,29 +42,44 @@
                 </div>
             </nav>
 
+        </header>
+
+        <section class="article-section">
+            <div class="container-fluid  h-100 d-flex">
+            <div id="" class="article-container col-xs-6 text-center p-1 mt-5 ">
+                <h1 class="p-4 mt-2" id="title"></h1>
+                <p class="p-4 mt-4" id="article-content"></p>
+
+
             <!-- search results / append li > a tags-->
             <section class="container">
-                <ul id="names" class="collection "></ul>
+                <ul id="names" class="list-group w-auto"></ul>
          </section>  
         </header>
 
       
-        <!-- single article section -->
-
+        
         <section class="article-section ">
+            
+            <!-- START single article section -->
             <div id="" class="article-container  text-center p-1 mx-auto mt-5">
+                
                 <h1 class="p-4 mt-2" id="title"></h1>
 
                 
-            </div> 
-          
-           <!-- append reply-comments if any available -->
-            <div id="comment-append" class="article-container  p-5 mt-5 mb-2 mx-auto"></div>
-             
+                
+                <div class="p-4 mt-4" id="article-content">
+                    <!--   entry GIF gets appened here       -->
+                      <p id="article-text">
+                     <!-- article body appended here -->
+                      </p>
+                  </div>
+               
+            </div>
+            <!-- END single article section -->
+            
 
-                <p class="p-4 mt-4" id="article-content"></p>
                 <div class="d-flex flex-row justify-content-start mx-3 mt-2 ">
-
                     <div class="reaction-container">
                         <div class="emoji-count1"></div>
                         <span id="emoji1" class="mx-3 fs-2">🔥</span>
@@ -73,22 +88,74 @@
                     <div class="reaction-container">
                         <div class="emoji-count2"></div>
                         <span id="emoji2" class="mx-3 fs-3">☀</span>
+                        
                     </div>
 
                     <div class="reaction-container">
                         <div class="emoji-count3"></div>
                         <span id="emoji3" class="mx-3 fs-3">🤑</span>
                     </div>
+                </div> 
+                <!-- like button div  -->
+                <div class="mt-4 d-flex justify-content-end">
+                    <button class="likebtn btn-like ">
+                        <span class="heart btn--icon-default">
+                            <span class="heart">&#9829</span>
+                        </span>
+                        <span class="count-like">0</span>
+                        <span class="btn-content btn-content--default">
+                            Likes
+                        </span>
+                    </button>
+                </div>     
+            </div>
 
+            <!-- comments display div -->
+             <div class="card text-center; h-100 col-xs-2 position-fixed;" style= "border:none; width: 30%; height:auto" id="comments-display">
+                <div class="card-body d-inline">
+                  <h5 class="card-title">Recent comments</h5>
+                  <p class="card-text"><br><br> <br> <br> <br><br><br> <br> <br> <br<br><br> <br> <br> <br><br><br> <br> <br> <br></p>
+                </div>
+            </div>
+        </div>
+
+        <form class="text-lg-center align-middle" id="comment-form">
+
+            <!-- text area and gif image container -->
+            <div class="d-flex flex-row  ">
+                <textarea class="leave-comment" name="single-entry" id="textA" class="form-control-md border-10" cols="70"
+                    rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
+
+
+                    <div id="comment-image-container">
+                        <img src="" alt="" id="comment-image">
+                    </div>
                 </div>
 
-                <!-- append comments if any available -->
-            </div>
-            <div id="comment-append"
-                class="article-container d-flex justify-content-center text-center p-1 mt-5 mb-2 mx-5"></div>
 
-            <div class="mt-4 d-flex justify-content-end">
+                <div class="border-0">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal"  type="button"
+                    name="GIF-btn">🔍 GIF</button>
+                    <input type="submit" class="buttons" value="Leave a comment!">
+                <div class="d-flex flex-row mx-3 mt-2">
+            </div>
+          </div>
+        </form>
+
+            <!-- append comments if any available -->
+            <!-- <div id="comment-append"
+                class="article-container d-flex justify-content-center text-center p-1 mt-5 mb-2 mx-5">
+            
+            
+            </div> -->
+
+            <!-- <div class="mt-4 d-flex justify-content-end">
                 <button class="likebtn btn-like ">
+
+            </div> 
+            <div class="mt-4 d-flex justify-content-start p-5">
+                <button class="likebtn btn btn-dark ">
+
                     <span class="heart btn--icon-default">
                         <span class="heart">&#9829</span>
                     </span>
@@ -97,7 +164,26 @@
                         Likes
                     </span>
                 </button>
+
+            </div> -->
+        </section>
+
+        <section class="mt-5">
+           
             </div>
+          
+           <!-- append reply-comments if any available -->
+            <div id="comment-append" class="article-container  p-5 mt-5 mb-2 mx-auto">
+             <!-- REPLY COMMENTS APPENDED HERE -->
+          </div>
+             
+              
+                <!-- append comments if any available -->
+            </div>
+            <div id="comment-append"
+                class="article-container d-flex justify-content-center text-center p-1 mt-5 mb-2 mx-5"></div>
+
+            
         </section>
 
         <section class="mt-5">
@@ -105,7 +191,7 @@
             <form class="text-lg-center align-middle" id="comment-form">
 
                 <!-- text area and gif image container -->
-                <div class="d-flex flex-row justify-content-center">
+                <div class="d-flex flex-column justify-content-center">
 
                     <textarea class="" name="single-entry" id="textA" class="form-control-md border-10" cols="100"
                         rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
@@ -116,15 +202,15 @@
                     <img src="" alt="" id="comment-image">
 
                 </div>
-
-                <div class="border-0">
+                <!-- container for <GIF> and <Leave a Comment!> button -->
+                <div class="d-flex align-items-center flex-row justify-content-between">
 
 
                     <!-- 🔍gif button -->
-                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
+                    <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
                    
 
-                    <input type="submit" class="buttons" value="Leave a comment!">
+                    <input type="submit" class="buttons"  value="Leave a comment!">
 
 
                     <div class="d-flex flex-row mx-3 mt-2">
@@ -137,9 +223,8 @@
 
                 </div>
             </form>
+
         </section>
-
-
 
         <!-- exp modal-->
         <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
@@ -151,11 +236,11 @@
                     </div>
                     <div id="modal-body" class="modal-body">
                         <h4>How creative ar you 👀?</h4>
+                        <div id="exp007" class="d-flex flex-wrap p-3 mb-5 h-50">
 
-                        <div id="exp007" class="d-flex flex-wrap p-3 mb-5 h-50"></div>
-                        
-                        <form class="form" id="gif-formz">
+                        </div>
 
+                        <form class="form" id="formz">
                             <!-- <label for="searchQ"  class="form-label mt-5">🔍GIF</label> -->
                             <input type="search" required class="search-bar form-control mt-5 " name="searchQ" id="expQ"
                                 placeholder="type for GIFS">
@@ -168,7 +253,7 @@
                 </div>
             </div>
         </div>
-            <!-- end modal -->
+
     </main>
     <footer class="footer">
 
@@ -178,3 +263,6 @@
 </body>
 
 </html>
+
+
+
