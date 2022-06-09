@@ -7,9 +7,12 @@ let commentAmount = 0;
 const likesNum = document.querySelector('.count-like');
 
 const renderComments = () => {
-	if (result.comments.length > commentAmount) {
+ console.log(result.comments.length)
+	if (result.comments.length > commentAmount && result.comments.length > 1) {
 		for (i = commentAmount; i < result.comments.length; i++) {
-			let e = result.comments[i]
+			
+			if (i != 0){
+				let e = result.comments[i]
 			const reply_card_div = document.createElement('div')
 			const reply_gif_img = document.createElement('img')
 			const reply_text_div = document.createElement('div')
@@ -22,7 +25,7 @@ const renderComments = () => {
 			reply_card_div.style.width = '18rem'
 			
 			reply_gif_img.classList = "card-img-top "
-			reply_gif_img.src = "https://media3.giphy.com/media/67ThRZlYBvibtdF9JH/200.gif?cid=73c2368f4jg0n96nmaefg94gcmvtswx3oxzwriz0tl7g1e18&rid=200.gif&ct=g"
+			 reply_gif_img.src = e.giphyUrl 
 			reply_text_div.classList = "card-body"
 			
 			reply_Para.classList = "card-body"
@@ -30,8 +33,11 @@ const renderComments = () => {
 			reply_text_div.append(reply_Para)
 			reply_card_div.append(reply_gif_img, reply_text_div)
 			
-			comment_Div.append(reply_card_div)
-			console.log(i);
+			e.giphyUrl ? comment_Div.append(reply_card_div) : ''
+			}
+
+			
+			// console.log(i);
 		}
 		commentAmount = result.comments.length;
 	}
