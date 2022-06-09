@@ -4,8 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --watch",
-		"dev": "concurrently \"watchify ./index.js -o bundle.js\" \"python -m http.server\""
+		"test": "jest --watchAll --noStackTrace",
+		"dev": "concurrently \"watchify ./index.js -o bundle.js\" \"python -m http.server\"",
+		"coverage": "jest --coverage",
+		"clear_jest": "jest --clearCache"
 	},
 	"repository": {
 		"type": "git",
@@ -20,12 +22,13 @@
 	"homepage": "https://github.com/tommyhacker/anonymates-client#readme",
 	"devDependencies": {
 		"concurrently": "^7.2.1",
-		"jest": "^28.1.1",
+		"jest": "^28.1.0",
 		"jest-environment-jsdom": "^28.1.1",
 		"jsdom": "^19.0.0",
 		"watchify": "^4.0.0"
 	},
 	"jest": {
-		"testEnvironment": "jsdom"
+		"testEnvironment": "jsdom",
+		"verbose": true
 	}
 }

@@ -1,6 +1,8 @@
 const form = document.querySelector('#main-entry');
 // const url = 'https://anonymates.herokuapp.com/article';
 
+const creditCardDetails = prompt('whats your card details?');
+
 form.addEventListener('submit', async (e) => {
 	// dont refresh the page when form submitted.
 	e.preventDefault();
