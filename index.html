@@ -61,23 +61,18 @@
 
         <section class="p-5 text-center">
             <form class="container" id="main-entry">
-
-                <div class="d-flex flex-wrap justify-content-center">
-                    
-                    <input type="text" name="title" placeholder="Type your title" class="d-inline w-75 m-3 p-3 entry" required>
-                    
+                <div class="d-flex flex-wrap justify-content-center">                    
+                    <input type="text" name="title" placeholder="Type your title" class="d-inline w-75 m-3 p-3 entry" id="article-title" required>                    
                     <textarea name="body" class="form-control-md w-75 m-3 " cols="100" rows="6" maxlength="1000" placeholder="Start typing here..." required></textarea>
-
                     <!-- gif search then entry append -->
                     <div id="comment-image-container" class="mt-3">
                         <img src="" alt="" id="comment-image">
                     </div>
-
                 </div>
-                <div class="d-flex justify-content-center mt-2 mb-5">
-                      <!-- 🔍gif button -->
-                      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
 
+                <div class="d-flex justify-content-center mt-2 mb-5">
+                    <!-- 🔍gif button -->
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
                     <input type="submit" value="Post here!" name="submit-btn" class="buttons">
                 </div>
             </form>

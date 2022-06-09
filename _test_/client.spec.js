@@ -13,3 +13,31 @@ describe('index.html', () => {
 		});
 	});
 });
+
+	describe('body', () => {
+		describe('form', () => {
+			let form;
+			let titleInput, textA, postBtn;
+			beforeEach(() => {
+				form = document.getElementById('#main-entry');
+				titleInput = document.getElementById('#article-title');
+				textA = document.querySelector('textarea');
+				postBtn = document.querySelector('[type="submit"]');
+			})
+			test('it exists', () => {
+				expect(form).toBeTruthy()
+			});
+		});
+		
+			describe('title input', () => {
+				test('it is a text input', () => {
+					expect(titleInput.getAttribute('type')).toBe('text')
+				})
+
+				test('it has a placeholder', () => {
+					expect(document.querySelector('[placeholder="Type your title"]')).toBeTruthy();
+				})
+			});
+
+
+	});
