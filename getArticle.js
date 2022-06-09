@@ -42,6 +42,9 @@ const getSingleArticle = async () => {
 		.then((res) => res.json())
 		.then(async (data) => {
 			result = data;
+			console.log(result.giphyUrl);
+			console.log(data);
+
 			likesNum.textContent = data.likes;
 			emojiCount1.textContent = data.reactions[0].count;
 			emojiCount2.textContent = data.reactions[1].count;
@@ -56,8 +59,15 @@ const getSingleArticle = async () => {
 			// container.append(title)
 
 			// rended the article.body
-			const message = document.querySelector('#article-content');
+			const message = document.querySelector('#article-text');
 			message.textContent = await result.body;
+			const articleContent = document.querySelector('#article-content');
+
+			const imij = document.createElement('img');
+			imij.src = result.giphyUrl;
+			imij.id = 'article-gif';
+
+			articleContent.append(imij);
 
 			renderComments();
 		})
@@ -77,6 +87,7 @@ const getSingleArticle = async () => {
 		// }
 		.catch((err) => console.log(err));
 	console.log(result.title);
+	console.log(result.giphyUrl);
 };
 
 getSingleArticle();
