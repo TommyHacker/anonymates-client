@@ -47,6 +47,9 @@ const getSingleArticle = async () => {
 		.then((res) => res.json())
 		.then(async (data) => {
 			result = data;
+			console.log(result.giphyUrl);
+			console.log(data);
+
 			likesNum.textContent = data.likes;
 			emojiCount1.textContent = data.reactions[0].count;
 			emojiCount2.textContent = data.reactions[1].count;
@@ -61,29 +64,36 @@ const getSingleArticle = async () => {
 			// container.append(title)
 
 			// rended the article.body
-			const message = document.querySelector('#article-content');
+			const message = document.querySelector('#article-text');
 			message.textContent = await result.body;
+			const articleContent = document.querySelector('#article-content');
 
-			
+			const imij = document.createElement('img');
+			imij.src = result.giphyUrl;
+			imij.id = 'article-gif';
+
+
+			articleContent.append(imij);
+
 			renderComments();
 		})
-			// for (i = 0; i < result.comments.length; i++) {
-				// 	const comment = document.createElement('p')
-				// 	//not sure if keeping this 
-				// 	comment.classList = " m-3 "
-				// 	comment.textContent = result.comments[i].text;
-			// 	//add this
-			// 	comment_Div.append(comment)
+		// for (i = 0; i < result.comments.length; i++) {
+		// 	const comment = document.createElement('p')
+		// 	//not sure if keeping this
+		// 	comment.classList = " m-3 "
+		// 	comment.textContent = result.comments[i].text;
+		// 	//add this
+		// 	comment_Div.append(comment)
 
-			
-			// for (i = 0; i < result.comments.length; i++) {
-			// 	const comment = document.createElement('p');
-			// 	comment.textContent = result.comments[i].text;
-			// 	document.body.append(comment);
+		// for (i = 0; i < result.comments.length; i++) {
+		// 	const comment = document.createElement('p');
+		// 	comment.textContent = result.comments[i].text;
+		// 	document.body.append(comment);
 
-			// }
+		// }
 		.catch((err) => console.log(err));
-		console.log(result.title);
+	console.log(result.title);
+	console.log(result.giphyUrl);
 };
 
 getSingleArticle();
