@@ -24,24 +24,59 @@
 
 <body>
     <main>
+<<<<<<< HEAD
         <header class="pt-5 pb-5 text-center">
             <a href="index.html">
                 <img src="./img/logo.png" alt="logo" id="logo">
             </a>    
             <input type="text" name="search-bar" class="form-control-sm" id="search-bar" placeholder="Search an entry">
+=======
+
+        <header class="p-5 mb-5 text-center ">
+            <a href="index.html">
+            <img src="./img/logo.png" alt="logo" id="logo">
+            </a>
+          
+            <!-- search bar  -->
+            <input type="text" name="search-bar" class="form-control-sm mx-4 justify-content-center" id="search-bar" placeholder="Search an entry">
+
+            <!-- nav -->
+
+>>>>>>> 266d4904a8455488482c33606e3b03b6af1ad1a2
             <nav class="d-inline-block">
                 <a href="about-page.html">About</a>
                 <div class="d-inline-block">
                     <a href="index.html" class="buttons">See all entries</a>
                 </div>
             </nav>
+
+            <!-- search results / append li > a tags-->
+            <section class="container">
+                <ul id="names" class="collection "></ul>
+         </section>  
         </header>
 
+<<<<<<< HEAD
         <section class="article-section">
             <div class="container-fluid  h-100 d-flex">
             <div id="" class="article-container col-xs-6 text-center p-1 mt-5 ">
+=======
+      
+        <!-- single article section -->
+
+        <section class="article-section ">
+            <div id="" class="article-container  text-center p-1 mx-auto mt-5">
+>>>>>>> 266d4904a8455488482c33606e3b03b6af1ad1a2
                 <h1 class="p-4 mt-2" id="title"></h1>
                 <p class="p-4 mt-4" id="article-content"></p>
+                
+                
+            </div> 
+          
+           <!-- append reply-comments if any available -->
+            <div id="comment-append" class="article-container  p-5 mt-5 mb-2 mx-auto"></div>
+             
+
                 <div class="d-flex flex-row justify-content-start mx-3 mt-2 ">
                     <div class="reaction-container">
                         <div class="emoji-count1"></div>
@@ -81,7 +116,16 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <form class="text-lg-center align-middle" id="comment-form">
+=======
+        <section class="mt-5">
+
+            <form class="text-lg-center align-middle" id="comment-form">
+
+                <!-- text area and gif image container -->
+                <div class="d-flex flex-row justify-content-center">
+>>>>>>> 266d4904a8455488482c33606e3b03b6af1ad1a2
 
             <!-- text area and gif image container -->
             <div class="d-flex flex-row  ">
@@ -89,14 +133,24 @@
                     rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
 
 
-                    <div id="comment-image-container">
-                        <img src="" alt="" id="comment-image">
-                    </div>
+                    <!--  -->
+                <div id="comment-image-container">
+                    <img src="" alt="" id="comment-image">
+
                 </div>
 
                 <div class="border-0">
+<<<<<<< HEAD
                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal"  type="button"
                     name="GIF-btn">🔍 GIF</button>
+=======
+
+
+                    <!-- 🔍gif button -->
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
+                   
+
+>>>>>>> 266d4904a8455488482c33606e3b03b6af1ad1a2
                     <input type="submit" class="buttons" value="Leave a comment!">
                 <div class="d-flex flex-row mx-3 mt-2">
             </div>
@@ -137,11 +191,11 @@
                     </div>
                     <div id="modal-body" class="modal-body">
                         <h4>How creative ar you 👀?</h4>
-                        <div id="exp007" class="d-flex flex-wrap p-3 mb-5 h-50">
 
-                        </div>
+                        <div id="exp007" class="d-flex flex-wrap p-3 mb-5 h-50"></div>
+                        
+                        <form class="form" id="gif-formz">
 
-                        <form class="form" id="formz">
                             <!-- <label for="searchQ"  class="form-label mt-5">🔍GIF</label> -->
                             <input type="search" required class="search-bar form-control mt-5 " name="searchQ" id="expQ"
                                 placeholder="type for GIFS">
@@ -154,7 +208,7 @@
                 </div>
             </div>
         </div>
-
+            <!-- end modal -->
     </main>
     <footer class="footer">
 
