@@ -34,11 +34,6 @@ const get_Gif = async (e) => {
 
 	//destruction of data from the json response
 
-	//console.logs for me to check
-	// console.log(resp);
-	// console.log(api_data);
-	// console.log(data);
-
 	//forEach() looping thru that fetched data and creating, appending and adding styles each loop
 	//setting GIPHY URL to our created img tag src="" to finally dispplay GIF
 
