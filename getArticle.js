@@ -18,7 +18,7 @@ const renderComments = () => {
 			const reply_gif_img = document.createElement('img')
 			const reply_text_div = document.createElement('div')
 			const reply_Para = document.createElement('p')
-			const comment_Div = document.getElementById('comment-append')
+			const comment_Div = document.getElementById('reply-comments')
 			
 			console.log(e.giphyUrl);
 			
@@ -95,8 +95,8 @@ const getSingleArticle = async () => {
 
 		// }
 		.catch((err) => console.log(err));
-	console.log(result.title);
-	console.log(result.giphyUrl);
+	// console.log(result.title);
+	// console.log(result.giphyUrl);
 };
 
 getSingleArticle();
