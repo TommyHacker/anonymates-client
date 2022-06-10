@@ -23,7 +23,7 @@
 		let a_href = `single-entry.html?id=${data.id}`;
 		const li_js = document.createElement('li');
 		const a_js = document.createElement('a');
-		a_js.classList = 'list-group-item list-group-item-action fs-3';
+		a_js.classList = 'list-group-item list-group-item-action fs-4';
 		a_js.textContent = data.title;
 		a_js.href = a_href;
 		li_js.style.display = 'none';

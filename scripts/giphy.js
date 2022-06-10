@@ -15,7 +15,14 @@ const get_Gif = async (e) => {
 	const api_url = `http://api.giphy.com/v1/gifs/search?q=${expQ}&api_key=${api_key}&limit=4`;
 
 	//fetching response from GIPHY api using api_url + ExQ + api_key
-	const resp = await fetch(api_url);
+	const resp = await fetch(api_url, {
+		headers: {
+			'Content-Type': 'application/json',
+			mode: "no-cors",
+			"Access-Control-Allow-Headers": "*"
+		}
+	}
+		);
 
 	// turning that fetch response to json
 	const api_data = await resp.json();
