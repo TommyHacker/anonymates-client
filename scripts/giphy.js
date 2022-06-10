@@ -13,21 +13,20 @@ const get_Gif = async (e) => {
 	//GIPHY api url with our access key added ,
 	// whatever there user types in the search bar will ge inserted to ${expQ}
 	const api_url = `http://api.giphy.com/v1/gifs/search?q=${expQ}&api_key=${api_key}&limit=4`;
-	const gifFetch = 'http://localhost:3000/articles/gif';
+	const gifFetch = 'https://anonymates.herokuapp/articles/gif';
 	let data;
 	//fetching response from GIPHY api using api_url + ExQ + api_key
-	const resp = await fetch(
-		gifFetch,
-		{
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				mode: 'no-cors',
-			},
-			body: { api_url },
-		}.then((res) => res.json())
-	)
-		.then((response) => (data = response))
+	const resp = await fetch(gifFetch, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			mode: 'no-cors',
+		},
+		body: JSON.stringify({ data: api_url }),
+	})
+		.then((res) => res.json())
+
+		.then((response) => (data = response.data))
 		.catch((err) => console.log(err));
 
 	// turning that fetch response to json
@@ -57,7 +56,7 @@ const get_Gif = async (e) => {
 		//bootstrap marigin-top: 3something
 		// h6.classList = "mt-3"
 		//setting the created img's src to the nested giphy url
-		imgz.src = e.images.fixed_height.url;
+		imgz.src = e;
 		//bootstrap class of width 50% i believe
 		imgz.classList = 'p-2';
 		// setting img tag to have a cursor pointer when hovered

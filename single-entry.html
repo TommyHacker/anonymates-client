@@ -128,6 +128,9 @@
                     <div class="card-body d-inline">
                         <h5 class="card-title">Recent comments</h5>
                         <p class="card-text">
+                            <div id="reply-comments">
+                                <!-- replies get appended here -->
+                            </div>
                             <!-- <br><br> <br> <br> <br><br><br> <br> <br> <br<br><br> <br> <br> <br><br><br> <br> <br> <br> -->
                         </p>
                     </div>
@@ -227,32 +230,12 @@
 
                 
                 <!-- container for <GIF> and <Leave a Comment!> button -->
-                <div class="   justify-content-center">
-
-
-                    🔍gif button
-                    <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
-
-                   
-
-
-                    <div class=" d-block mx-3 mt-2">
-
-                    <!-- 🔍gif button -->
-                    <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
-
-                    <!-- leave comment button -->
-                    <input type="submit" class="buttons"  value="Leave a comment!">
-
-                    </div>
-
-                </div>
-            </form>
+               
 
         </section> -->
 
             <!-- exp modal-->
-            <!-- <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -260,14 +243,14 @@
                         <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
                     </div>
                     <div id="modal-body" class="modal-body">
-                        <h4>How creative ar you 👀?</h4>
+                        <h4>How Creative Are You 👀?</h4>
                         <div id="exp007" class="d-flex flex-wrap p-3 mb-5 h-50">
 
                         </div>
 
-                        <form class="form" id="formz">
-                            <label for="searchQ"  class="form-label mt-5">🔍GIF</label>
-                            <input type="search" required class="search-bar form-control mt-5 " name="searchQ" id="expQ"
+                        <form class="form" id="gif-formz">
+                            <label for="searchQ"  class="form-label mt-5"></label>
+                            <input type="search" required class="search-bar form-control mt-2 " name="searchQ" id="expQ"
                                 placeholder="type for GIFS">
                             <input type="submit" class="btn btn-success mt-2" value="🔍GIF">
                         </form>
@@ -277,7 +260,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
     </main>
     <footer class="footer">
