@@ -5,29 +5,31 @@ const html = fs.readFileSync(path.resolve(__dirname, '../index.html'), 'utf8');
 describe('index.html', () => {
 	beforeEach(() => {
 		document.documentElement.innerHTML = html.toString();
-	});
+	})
 	describe('head', () => {
 		test('it has a title', () => {
-			let title = document.querySelector('title');
+			const title = document.querySelector('title');
 			expect(title).toBeTruthy();
-		});
-	});
-});
+		})
+	})
+
 
 	describe('body', () => {
 		describe('form', () => {
 			let form;
 			let titleInput, textA, postBtn;
 			beforeEach(() => {
-				form = document.getElementById('#main-entry');
-				titleInput = document.getElementById('#article-title');
-				textA = document.querySelector('textarea');
-				postBtn = document.querySelector('[type="submit"]');
+				form = document.querySelector('#main-entry');
+				titleInput = form.querySelector('#article-title');
+				textA = form.querySelector('textarea');
+				postBtn = form.querySelector('[type="submit"]');
 			})
+
 			test('it exists', () => {
 				expect(form).toBeTruthy()
 			});
-		});
+
+			
 		
 			describe('title input', () => {
 				test('it is a text input', () => {
@@ -39,5 +41,24 @@ describe('index.html', () => {
 				})
 			});
 
+			describe('textarea', () => {
+				test('it has a max number of words', () => {
+						expect(textA.getAttribute('maxlength')).toBe('1000')
+					})			
+				})
 
-	});
+
+			describe('post button', () => {
+				test('it says "Post here!"', () => {
+					expect(postBtn.value).toBe('Post here!')
+				})
+			})	
+		
+		});
+
+		test('it has a GIF form', () => {
+			expect(document.querySelector('#gif-formz')).toBeTruthy()
+		})	
+
+	})
+})

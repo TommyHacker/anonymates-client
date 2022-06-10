@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./img/logo.png"/>
-    <title>Anonymates About Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script defer src="./index.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<script defer src="./getArticle.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="./img/logo.png"/>
+        <title>Anonymates About Page</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- <script defer src="./script.js"></script> -->
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- <script defer src="./getArticle.js"></script> -->
+        <script defer src="./scripts/search.js"></script>
+
+    </head>
 <body>
     <header class="pt-5 pb-5 text-center">
-        <a href="index.html">
-
-        <img src="./img/logo.png" alt="logo" id="logo">
+        <a href="index.html" id="logo-link">
+            <img src="./img/logo.png" alt="logo" id="logo">
         </a>
 
         <!-- search bar  -->
@@ -31,17 +32,21 @@
             </div>
         </nav>
 
-        <!-- search results / append li > a tags-->
+        <!-- START OF: search results aka append li > a tags-->
         <section class="container">
-            <ul id="names" class="collection "></ul>
+            <ul id="names" class="list-group w-auto"></ul>
         </section>  
+        <!-- END OF: search results aka append li > a tags-->
 
     </header>
  
     <main>
         <section class="p-5 text-center">
             <h2 class="fs-1 p-5 text-center">Meet the <span class="fontFamily">contributors</span></h2>
+
             <!-- <div class="p-3 d-flex flex-column"> -->
+    
+                <!-- marie-sophie -->
                 <div class="d-flex flex-row m-auto">
                     <div class="p-5 d-flex flex-md-column m-auto">
                         <img src="./img/Marie-Sophie.png" class="img-about" alt="">
@@ -50,6 +55,7 @@
                     <div class="m-5 p-5 d-flex flex-sm-column">
                         <p class="text-start">Lemon drops muffin lemon drops bonbon cookie apple pie tiramisu tootsie roll. Toffee marshmallow halvah bear claw toffee dragée chocolate cake. Tiramisu soufflé croissant jelly-o cookie.</p>
                     </div>
+<<<<<<< HEAD
                 </div> 
                 <div class="d-flex flex-row m-auto">
                     <div class="p-5 d-flex flex-md-column m-auto">
@@ -59,6 +65,47 @@
                     <div class="m-5 p-5 d-flex flex-sm-column">
                         <p class="text-start">Lemon drops muffin lemon drops bonbon cookie apple pie tiramisu tootsie roll. Toffee marshmallow halvah bear claw toffee dragée chocolate cake. Tiramisu soufflé croissant jelly-o cookie.</p>
                     </div>
+=======
+
+
+                    <!-- aaron -->
+                    <div class="d-flex flex-row m-auto">
+                        <div class="p-5 d-flex flex-md-column m-auto">
+                            <img src="./img/Aaron.png" class="img-about" alt="">
+                            <h3 class="pt-4 fontFamily">Aaron</h3>
+                        </div>    
+                        <div class="m-5 p-5 d-flex flex-sm-column">
+                            <p class="text-start">Lemon drops muffin lemon drops bonbon cookie apple pie tiramisu tootsie roll. Toffee marshmallow halvah bear claw toffee dragée chocolate cake. Tiramisu soufflé croissant jelly-o cookie.</p>
+                        </div>
+
+                         <!-- ana -->
+                    <div class="d-flex flex-row m-auto">
+                        <div class="p-5 d-flex flex-md-column m-auto">
+                            <img src="./img/Anna.png" class="img-about" alt="">
+                            <h3 class="pt-4 fontFamily">Anna</h3>
+                        </div>    
+                        <div class="m-5 p-5 d-flex flex-sm-column">
+                            <p class="text-start">Lemon drops muffin lemon drops bonbon cookie apple pie tiramisu tootsie roll. Toffee marshmallow halvah bear claw toffee dragée chocolate cake. Tiramisu soufflé croissant jelly-o cookie.</p>
+                        </div>
+
+                         <!-- tom -->
+                    <div class="d-flex flex-row m-auto">
+                        <div class="p-5 d-flex flex-md-column m-auto">
+                            <img src="./img/Tom.png" class="img-about" alt="">
+                            <h3 class="pt-4 fontFamily">Tom</h3>
+                        </div>    
+                        <div class="m-5 p-5 d-flex flex-sm-column">
+                            <p class="text-start">Lemon drops muffin lemon drops bonbon cookie apple pie tiramisu tootsie roll. Toffee marshmallow halvah bear claw toffee dragée chocolate cake. Tiramisu soufflé croissant jelly-o cookie.</p>
+                        </div>
+                <!-- </div> -->
+                <!-- <div>
+                    <img src="#" alt="">
+                    <h3>Name</h3>
+                </div>
+                <div>
+                    <img src="#" alt="">
+                    <h3>Name</h3>
+>>>>>>> abfe7fd01b56e54a47a7a8ce8919ab7f62177582
                 </div>
                 <div class="d-flex flex-row m-auto">
                     <div class="p-5 d-flex flex-md-column m-auto">
