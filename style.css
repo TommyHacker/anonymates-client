@@ -242,6 +242,18 @@ textarea:focus {
 	height: 100%;
 }
 
+#featured-1-id,
+#featured-2-id,
+#featured-3-id {
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+#featured-1-id:hover,
+#featured-2-id:hover,
+#featured-3-id:hover {
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.332);
+}
+
 /* i googled BootStrap breakpoints to get these widths */
 
 /* BREAKPOINTS */
