@@ -1,5 +1,6 @@
 // practice modal function
 let giphyUrl = '';
+let data;
 const get_Gif = async (e) => {
 	//prevent submit refresh default
 	e.preventDefault();
@@ -14,6 +15,7 @@ const get_Gif = async (e) => {
 	// whatever there user types in the search bar will ge inserted to ${expQ}
 	const api_url = `http://api.giphy.com/v1/gifs/search?q=${expQ}&api_key=${api_key}&limit=4`;
 
+
 	//fetching response from GIPHY api using api_url + ExQ + api_key
 	const resp = await fetch(api_url);
 
@@ -23,15 +25,17 @@ const get_Gif = async (e) => {
 	//destruction of data from the json response
 	const { data } = api_data;
 
-	//console.logs for me to check
-	// console.log(resp);
-	// console.log(api_data);
-	// console.log(data);
 
-	//forEach() looping thru that fetched data and creating, appending and adding styles each loop
-	//setting GIPHY URL to our created img tag src="" to finally dispplay GIF
+			// data[0].images.fixed_height.url
+		})
+		.catch((err) => console.log(err));
+};
 
-	const commentImage = document.querySelector('#comment-image');
+// turning that fetch response to json
+// const api_data = await resp.json();
+
+//destruction of data from the json response
+
 
 	data.forEach((e) => {
 		//getting the already empty div
@@ -51,24 +55,13 @@ const get_Gif = async (e) => {
 		// setting img tag to have a cursor pointer when hovered
 		imgz.style = 'cursor: pointer;height:170px;width:170px;';
 
-		console.log(exp007.childElementCount);
-		// exp007.childElementCount >= 8 ?  false : ''
-		//setting an event of click on img tags so can pick a GIF and fisplay in our comment-reply area
-		imgz.addEventListener('click', (e) => {
-			//clg event target's src
-			console.log(e.target.src);
-			// document.getElementById('textA').textContent = e.target.src;
-			let url = e.target.src;
-			giphyUrl = e.target.src;
-			commentImage.src = imgz.src;
-		});
 
-		// appending our creations from the forEach Loop
-		// exp007.append(h6, imgz)
-		exp007.append(imgz);
-	});
-	// data[0].images.fixed_height.url
-};
+//forEach() looping thru that fetched data and creating, appending and adding styles each loop
+//setting GIPHY URL to our created img tag src="" to finally dispplay GIF
+
+const commentImage = document.querySelector('#comment-image');
+console.log(data);
+data;
 
 //setting event on form of submit and passing get_gif Function as a 2nd parameter
 const gif_formz = document.getElementById('gif-formz')
