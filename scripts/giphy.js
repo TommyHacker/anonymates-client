@@ -14,16 +14,19 @@ const get_Gif = async (e) => {
 	//GIPHY api url with our access key added ,
 	// whatever there user types in the search bar will ge inserted to ${expQ}
 	const api_url = `http://api.giphy.com/v1/gifs/search?q=${expQ}&api_key=${api_key}&limit=4`;
-	const gifFetch = 'https://anonymates.herokuapp/articles/gif';
+	// const gifFetch = 'https://anonymates.herokuapp/articles/middleman/fetch/gif';
 	//fetching response from GIPHY api using api_url + ExQ + api_key
-	const resp = await fetch(gifFetch, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-			mode: 'no-cors',
-		},
-		body: JSON.stringify({ data: api_url }),
-	})
+	const resp = await fetch(
+		'https://anonymates.herokuapp/articles/middleman/fetch/gif',
+		{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				mode: 'no-cors',
+			},
+			body: JSON.stringify({ data: api_url }),
+		}
+	)
 		.then((res) => res.json())
 
 		.then((response) => {
