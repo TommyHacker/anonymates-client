@@ -13,13 +13,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- <script defer src="./getArticle.js"></script> -->
-    <script defer src="./index.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
     <script defer src="./getArticle.js"></script>
-
-
+    <script defer src="./scripts/search.js"></script>
+    <script defer src="./scripts/giphy.js"></script>
 </head>
 
 <body>
@@ -42,10 +41,12 @@
                 </div>
             </nav>
 
-            <!-- search results / append li > a tags-->
-            <section class="container">
-                <ul id="names" class="list-group w-auto"></ul>
-         </section>  
+             <!-- START OF: search results aka append li > a tags-->
+             <section class="container">
+                <ul id="names" class="list-group"></ul>
+            </section>  
+            <!-- END OF: search results aka append li > a tags-->
+
         </header>
 
       
@@ -53,12 +54,11 @@
         <section class="article-section ">
             
             <!-- START single article section -->
+
             <div id="" class="article-container  text-center p-1 mx-auto mt-5">
                 
                 <h1 class="p-4 mt-2" id="title"></h1>
 
-                
-                
                 <div class="p-4 mt-4" id="article-content">
                     <!--   entry GIF gets appened here       -->
                       <p id="article-text">
@@ -76,7 +76,7 @@
                 
                 
 
-                <div class="d-flex flex-row justify-content-start mx-3 mt-2 ">
+                <div class="d-flex flex-row px-4 mx-3 mt-2 ">
 
                     <div class="reaction-container">
                         <div class="emoji-count1"></div>
@@ -94,19 +94,19 @@
                         <span id="emoji3" class="mx-3 fs-3">🤑</span>
                     </div>
 
-                </div>
-            </div> 
-            <div class="mt-4 d-flex justify-content-start p-5">
-                <button class="likebtn btn btn-dark ">
-                    <span class="heart btn--icon-default">
-                        <span class="heart">&#9829</span>
-                    </span>
-                    <span class="count-like">0</span>
-                    <span class="btn-content btn-content--default">
+                    
+                    <!-- <div class="mt-4 d-flex justify-content-start p-5"> -->
+                        <button class="likebtn mx-3 btn btn-dark ">
+                            <span class="heart btn--icon-default">
+                                <span class="heart">&#9829</span>
+                            </span>
+                            <span class="count-like">0</span>
+                            <span class="btn-content btn-content--default">
                         Likes
                     </span>
                 </button>
-            </div>
+            <!-- </div> -->
+        </div>
           
            <!-- append reply-comments if any available -->
             <div id="comment-append" class="article-container  p-5 mt-5 mb-2 mx-auto">
@@ -131,8 +131,7 @@
                 <!-- text area and gif image container -->
                 <div class="d-flex flex-column justify-content-center">
 
-                    <textarea class="" name="single-entry" id="textA" class="form-control-md border-10" cols="100"
-                        rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
+                  
 
 
                     <!--  -->
@@ -140,22 +139,23 @@
                     <img src="" alt="" id="comment-image">
 
                 </div>
-                <!-- container for <GIF> and <Leave a Comment!> button -->
-                <div class="d-flex align-items-center flex-row justify-content-between">
 
+                
+                <!-- container for <GIF> and <Leave a Comment!> button -->
+                <div class="   justify-content-center">
+
+                    <textarea class="" name="single-entry" id="textA" class="form-control border-10" cols="100"
+                rows="8" maxlength="1000" placeholder="Leave your comment here..."></textarea>
+                   
+
+
+                    <div class=" d-block mx-3 mt-2">
 
                     <!-- 🔍gif button -->
                     <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
-                   
 
+                    <!-- leave comment button -->
                     <input type="submit" class="buttons"  value="Leave a comment!">
-
-
-                    <div class="d-flex flex-row mx-3 mt-2">
-
-
-
-
 
                     </div>
 
