@@ -6,6 +6,7 @@ let commentAmount = 0;
 // this is to display the number of likes that the article has.
 const likesNum = document.querySelector('.count-like');
 
+
 const renderComments = () => {
  console.log(result.comments.length)
 	if (result.comments.length > commentAmount && result.comments.length > 1) {
@@ -42,13 +43,15 @@ const renderComments = () => {
 		commentAmount = result.comments.length;
 	}
 };
+
+//about.html doesnt need this 
 const getSingleArticle = async () => {
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
 		.then(async (data) => {
 			result = data;
-			console.log(result.giphyUrl);
-			console.log(data);
+			// console.log(result.giphyUrl);
+			// console.log(data);
 
 			likesNum.textContent = data.likes;
 			emojiCount1.textContent = data.reactions[0].count;
@@ -124,7 +127,9 @@ const clickLikeBtn = () => {
 	increaseLike();
 };
 
-likeBtn.addEventListener('click', clickLikeBtn);
+
+	likeBtn.addEventListener('click', clickLikeBtn);
+
 
 //LEAVE A COMMENT BUTTON
 
@@ -132,27 +137,30 @@ const commentForm = document.querySelector('#comment-form');
 const textA = document.querySelector('#textA');
 const commentImage = document.querySelector('#comment-image');
 
-commentForm.addEventListener('submit', async (e) => {
-	e.preventDefault();
-	let text = textA.value;
-	console.log('text = ', text);
-	const giphyUrl = commentImage.src;
-	console.log('giphyUrl = ', giphyUrl);
-	await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-			mode: 'no-cors',
-		},
-		body: JSON.stringify({ text, giphyUrl }),
-	})
-		.then((res) => res.json())
-		.then((data) => {
-			result.comments = data.data;
-			//console.log(data);
-			renderComments();
+
+
+	commentForm.addEventListener('submit', async (e) => {
+		e.preventDefault();
+		let text = textA.value;
+		console.log('text = ', text);
+		const giphyUrl = commentImage.src;
+		console.log('giphyUrl = ', giphyUrl);
+		await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				mode: 'no-cors',
+			},
+			body: JSON.stringify({ text, giphyUrl }),
 		})
-		.catch((error) => console.log(error));
-	textA.value = '';
-	commentImage.src = '';
-});
+			.then((res) => res.json())
+			.then((data) => {
+				result.comments = data.data;
+				//console.log(data);
+				renderComments();
+			})
+			.catch((error) => console.log(error));
+		textA.value = '';
+		commentImage.src = '';
+	});
+

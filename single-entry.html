@@ -13,13 +13,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- <script defer src="./getArticle.js"></script> -->
-    <script defer src="./index.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
     <script defer src="./getArticle.js"></script>
-
-
+    <script defer src="./scripts/search.js"></script>
+    <script defer src="./scripts/giphy.js"></script>
 </head>
 
 <body>
@@ -36,6 +35,7 @@
                     <!-- <a href="index.html" class="buttons" style="width:200px;">See all entries</a> -->
                 </div>
             </nav>
+
 
         </header>
 
@@ -69,10 +69,12 @@
                                 <!-- article body appended here -->
                             </p>
 
+
                         </div>
 
                         <!-- </div> -->
                         <!-- END single article section -->
+
 
 
 
@@ -102,15 +104,18 @@
                         <span id="emoji3" class="mx-3 fs-3">🤑</span>
                     </div>
 
+
                 </div>
                 <div class="p-2">
                     <div class="mb-1 d-flex justify-content-end">
                         <button class="likebtn btn-like rounded p-1 ">
+
                             <span class="heart btn--icon-default">
                                 <span class="heart">&#9829</span>
                             </span>
                             <span class="count-like">0</span>
                             <span class="btn-content btn-content--default">
+
                                 Likes
                             </span>
                         </button>
@@ -175,6 +180,7 @@
                     </span>
                 </button>
 
+
             </div> -->
             <!-- </section> -->
 
@@ -192,6 +198,7 @@
             <!-- </div> -->
             <!-- <div id="comment-append" -->
             <!-- class="article-container d-flex justify-content-center text-center p-1 mt-5 mb-2 mx-5"></div> -->
+
 
 
             <!-- </section> -->
@@ -212,22 +219,30 @@
                     <img src="" alt="" id="comment-image">
 
                 </div>
+
+
                 container for <GIF> and <Leave a Comment!> button
                 <div class="d-flex align-items-center flex-row justify-content-between">
 
 
+                
+                <!-- container for <GIF> and <Leave a Comment!> button -->
+                <div class="   justify-content-center">
+
+
                     🔍gif button
                     <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
+
                    
 
+
+                    <div class=" d-block mx-3 mt-2">
+
+                    <!-- 🔍gif button -->
+                    <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#reg-modal" type="button" name="GIF-btn" >🔍 GIF</button>
+
+                    <!-- leave comment button -->
                     <input type="submit" class="buttons"  value="Leave a comment!">
-
-
-                    <div class="d-flex flex-row mx-3 mt-2">
-
-
-
-
 
                     </div>
 
