@@ -6,45 +6,42 @@ let commentAmount = 0;
 // this is to display the number of likes that the article has.
 const likesNum = document.querySelector('.count-like');
 
-
 const renderComments = () => {
- console.log(result.comments.length)
+	console.log(result.comments.length);
 	if (result.comments.length > commentAmount && result.comments.length > 1) {
 		for (i = commentAmount; i < result.comments.length; i++) {
-			
-			if (i != 0){
-				let e = result.comments[i]
-				const reply_card_div = document.createElement('div')
-				const reply_gif_img = document.createElement('img')
-				const reply_text_div = document.createElement('div')
-				const reply_Para = document.createElement('p')
-				const comment_Div = document.getElementById('comment-append')
-				
+			if (i != 0) {
+				let e = result.comments[i];
+				const reply_card_div = document.createElement('div');
+				const reply_gif_img = document.createElement('img');
+				const reply_text_div = document.createElement('div');
+				const reply_Para = document.createElement('p');
+				const comment_Div = document.getElementById('comment-append');
+
 				console.log(e.giphyUrl);
-				
-				reply_card_div.classList = "card p-3 mt-3"
-				reply_card_div.style.width = '18rem'
-				
-				reply_gif_img.classList = "card-img-top "
-				reply_gif_img.src = e.giphyUrl 
-				reply_text_div.classList = "card-body"
-				
-				reply_Para.classList = "card-body"
-				reply_Para.textContent = e.text
-				reply_text_div.append(reply_Para)
-				reply_card_div.append(reply_gif_img, reply_text_div)
-				
-				e.giphyUrl ? comment_Div.append(reply_card_div) : ''
+
+				reply_card_div.classList = 'card p-3 mt-3';
+				reply_card_div.style.width = '18rem';
+
+				reply_gif_img.classList = 'card-img-top ';
+				reply_gif_img.src = e.giphyUrl;
+				reply_text_div.classList = 'card-body';
+
+				reply_Para.classList = 'card-body';
+				reply_Para.textContent = e.text;
+				reply_text_div.append(reply_Para);
+				reply_card_div.append(reply_gif_img, reply_text_div);
+
+				e.giphyUrl ? comment_Div.append(reply_card_div) : '';
 			}
 
-			
 			// console.log(i);
 		}
 		commentAmount = result.comments.length;
 	}
 };
 
-//about.html doesnt need this 
+//about.html doesnt need this
 const getSingleArticle = async () => {
 	await fetch(`https://anonymates.herokuapp.com/articles/${id}`)
 		.then((res) => res.json())
@@ -74,7 +71,6 @@ const getSingleArticle = async () => {
 			const imij = document.createElement('img');
 			imij.src = result.giphyUrl;
 			imij.id = 'article-gif';
-
 
 			articleContent.append(imij);
 
@@ -127,9 +123,7 @@ const clickLikeBtn = () => {
 	increaseLike();
 };
 
-
-	likeBtn.addEventListener('click', clickLikeBtn);
-
+likeBtn.addEventListener('click', clickLikeBtn);
 
 //LEAVE A COMMENT BUTTON
 
@@ -137,30 +131,29 @@ const commentForm = document.querySelector('#comment-form');
 const textA = document.querySelector('#textA');
 const commentImage = document.querySelector('#comment-image');
 
-
-
-	commentForm.addEventListener('submit', async (e) => {
-		e.preventDefault();
-		let text = textA.value;
-		console.log('text = ', text);
-		const giphyUrl = commentImage.src;
-		console.log('giphyUrl = ', giphyUrl);
-		await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				mode: 'no-cors',
-			},
-			body: JSON.stringify({ text, giphyUrl }),
+commentForm.addEventListener('submit', async (e) => {
+	e.preventDefault();
+	let text = textA.value;
+	console.log('text = ', text);
+	const giphyUrl = commentImage.src;
+	console.log('giphyUrl = ', giphyUrl);
+	await fetch(`https://anonymates.herokuapp.com/articles/${id}/comment`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			mode: 'no-cors',
+		},
+		body: JSON.stringify({ text, giphyUrl }),
+	})
+		.then((res) => res.json())
+		.then((data) => {
+			result.comments = data.data;
+			//console.log(data);
+			renderComments();
 		})
-			.then((res) => res.json())
-			.then((data) => {
-				result.comments = data.data;
-				//console.log(data);
-				renderComments();
-			})
-			.catch((error) => console.log(error));
-		textA.value = '';
-		commentImage.src = '';
-	});
+		.catch((error) => console.log(error));
+	textA.value = '';
+	commentImage.src = '';
+});
 
+module.exports = getArticle;
