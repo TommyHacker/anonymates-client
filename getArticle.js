@@ -14,6 +14,7 @@ const renderComments = () => {
 			
 			if (i != 0){
 				let e = result.comments[i]
+
 			const reply_card_div = document.createElement('div')
 			const reply_gif_img = document.createElement('img')
 			const reply_text_div = document.createElement('div')
@@ -35,6 +36,7 @@ const renderComments = () => {
 			reply_card_div.append(reply_gif_img, reply_text_div)
 			
 			e.giphyUrl ? comment_Div.append(reply_card_div) : ''
+
 			}
 
 			
